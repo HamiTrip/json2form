@@ -1,46 +1,75 @@
 {
-  "root": {
-    "x_domain": "xdomain",
-    "flights": {
-      "username": "username value",
-      "client_data": {
-        "lua_formula": "hfjh jkh s 34 () {} [] 523kjfh kj hdjf",
-        "name": "fjkjdfkjsldj"
+  "x_domain": "hamitrip:360trip",
+  "backoffice_base_url": "https://hipotrip.ir/",
+  "frontend_title": "HipoTrip",
+  "frontend_base_url": "https://hipotrip.ir/",
+  "support_email": "info@360trip.ir",
+  "support_webhook": "https://hipotrip.ir/",
+  "exceptions_webhook": "https://chat.hamiYZd7PwQ",
+  "nsp": [
+    {
+      "email": {
+        "email_en_register_template_id": "2192987",
+        "email_fa_register_template_id": "2158762",
+        "email_en_reset_password_template_id": "2192381",
+        "email_fa_reset_password_template_id": "2224482",
+        "email_en_ticket_pending_template_id": "2201741",
+        "email_fa_ticket_pending_template_id": "2224823",
+        "email_en_issued_template_id": "2200981",
+        "email_fa_issued_template_id": "2224822"
+      },
+      "sms": {
+        "sms_en_register_text": "HiHappytrip.ir",
+        "sms_fa_register_text": "سrip.ir",
+        "sms_en_issued_text": "Thankk your dashboas",
+        "sms_fa_issued_text": "با تشکs"
+      },
+      "push": {
+        "push_en_issued_notification_title": "Ticsued",
+        "push_en_issued_notification_body": "Yoonel",
+        "push_fa_issued_notification_title": "بلیر شد",
+        "push_fa_issued_notification_body": "شما میافت نمایید"
       }
     },
-    "nsp": [
-      {
-        "email": {
-          "email_en_register_template_id": "123",
-          "email_fa_register_template_id": "345"
-        },
-        "sms": {
-          "sms_en_register_template_id": 543,
-          "sms_fa_register_template_id": 368
-        }
+    {
+      "email": {
+        "email_en_register_template_id": "2192987",
+        "email_fa_register_template_id": "2158762",
+        "email_en_reset_password_template_id": "2192381",
+        "email_fa_reset_password_template_id": "2224482",
+        "email_en_ticket_pending_template_id": "2201741",
+        "email_fa_ticket_pending_template_id": "2224823",
+        "email_en_issued_template_id": "2200981",
+        "email_fa_issued_template_id": "2224822"
       },
-      {
-        "email": {
-          "email_en_register_template_id": 123,
-          "email_fa_register_template_id": 345
-        },
-        "sms": {
-          "sms_en_register_template_id": 543,
-          "sms_fa_register_template_id": 368
-        }
+      "sms": {
+        "sms_en_register_text": "HiHappytrip.ir",
+        "sms_fa_register_text": "سrip.ir",
+        "sms_en_issued_text": "Thankk your dashboas",
+        "sms_fa_issued_text": "با تشکs"
+      },
+      "push": {
+        "push_en_issued_notification_title": "Ticsued",
+        "push_en_issued_notification_body": "Yoonel",
+        "push_fa_issued_notification_title": "بلیر شد",
+        "push_fa_issued_notification_body": "شما میافت نمایید"
       }
-    ],
-    "names": [
-      "ali",
-      "hasan"
-    ],
-    "arrays": [
-      [
-        "arr1"
-      ],
-      [
-        "arr2"
-      ]
-    ]
-  }
+    }
+  ],
+  "payment_gateways": [
+    {
+      "currency": "irr",
+      "gateway": "parsian",
+      "merchant_id": "VJIs2",
+      "username": "west",
+      "password": "we"
+    },
+    {
+      "currency": "eur",
+      "gateway": "fsd",
+      "merchant_id": "wet3",
+      "username": "rew",
+      "password": "wer"
+    }
+  ]
 }

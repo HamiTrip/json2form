@@ -32,6 +32,7 @@ export default class FormGen {
         switch (apiType) {
             case APP_CONFIG.API_TYPES.STRING:
             case APP_CONFIG.API_TYPES.NUMBER:
+            case APP_CONFIG.API_TYPES.ENUM:
                 widgetType = CONFIG.WIDGETS.INPUT;
 
                 break;
@@ -123,102 +124,159 @@ export default class FormGen {
         return $wrapper;
     }
 
-    _manipulateArray(schema, parentPath, $parent, parentData) {
+    _push(schema, array) {
+        if (schema.kind === 'group') {
+            switch (schema.type) {
+                case 'object':
+                    array.push({});
+                    break;
+                case 'array':
+                    array.push([]);
+                    break;
+            }
+        } else {
+            array.push('');
+        }
+
+        return array.length - 1;
+    }
+
+    _manipulateArray(schema, parentPath, $parent, parentData, index) {
         let itemPath;
         let $group;
+        let fieldId;
 
-        itemPath = parentPath + schema.name;
+        if (index !== -1) {
+            fieldId = index;
+            index = -1;
+        } else {
+            fieldId = schema.name;
+        }
 
-        if (parentData[schema.name] === undefined) {
-            parentData[schema.name] = [];
+        itemPath = parentPath + fieldId;
+
+
+        if (parentData[fieldId] === undefined) {
+            parentData[fieldId] = [];
         }
 
         $group = $('<fieldset style="border: 3px solid #000;padding: 10px 15px;"></fieldset>');
-        $group.append($('<legend style="text-indent: 15px;">').text(schema.name));
+        $group.append($('<legend style="text-indent: 15px;">').text(fieldId));
 
-        this.manipulate(schema.children_schema, itemPath, $group, parentData[schema.name]);
+        if (parentData.length === 0) {
+            let _index;
+
+            _index = this._push(schema.children_schema, parentData[fieldId]);
+
+            this.manipulate($.extend(true, {}, schema.children_schema), itemPath, $group, parentData[fieldId], _index);
+        } else {
+            parentData[fieldId].forEach((field, index) => {
+                this.manipulate($.extend(true, {}, schema.children_schema), itemPath, $group, parentData[fieldId], index);
+            })
+        }
 
         let $btn;
         $btn = $('<button type="button" class="btn btn-info">+</button>');
         $btn.on('click', () => {
-            this.manipulate(schema.children_schema, itemPath, $group, parentData[schema.name]);
+            let _index;
+
+            _index = this._push(schema.children_schema, parentData[fieldId]);
+            console.log(parentData[fieldId]);
+            this.manipulate(
+                schema.children_schema,
+                itemPath,
+                $group,
+                parentData[fieldId],
+                _index)
+            ;
         });
         $group.prepend($btn);
         $parent.append($group);
     }
 
-    _manipulateMap(schema, parentPath, $parent, parentData) {
+    _manipulateMap(schema, parentPath, $parent, parentData, index) {
         let itemPath;
         let $group;
+        let fieldId;
 
-        itemPath = parentPath + schema.name;
+        if (index !== -1) {
+            fieldId = index;
+            index = -1;
+            console.log('index > ', index);
+        } else {
+            fieldId = schema.name;
+            console.log('name > ', schema.name);
+        }
 
-        if (parentData[schema.name] === undefined) {
-            parentData[schema.name] = {}
+        console.log('_manipulateMap::fieldId:', fieldId);
+        console.log('parentData:', parentData);
+
+        itemPath = parentPath + fieldId;
+
+        if (parentData[fieldId] === undefined) {
+            parentData[fieldId] = {}
         }
 
         $group = $('<fieldset style="border: 1px solid #000; padding: 20px;"></fieldset>');
-        $group.append($('<legend style="text-indent: 15px;">').text(schema.name));
+        $group.append($('<legend style="text-indent: 15px;">').text(fieldId));
 
         for (let item in schema.children) {
             if (!schema.children.hasOwnProperty(item)) {
                 continue;
             }
 
-            this.manipulate(schema.children[item], itemPath, $group, parentData[schema.name]);
+            this.manipulate(schema.children[item], itemPath, $group, parentData[fieldId], index);
         }
 
         $parent.append($group);
     }
 
-    _manipulateField(schema, parentPath, $parent, parentData) {
+    _manipulateField(schema, parentPath, $parent, parentData, index) {
         let $widget;
         let itemPath;
-        let fieldName;
+        let fieldId;
 
-        itemPath = parentPath + schema.name;
+        if (index !== -1) {
+            fieldId = index;
+            index = -1;
+            console.log('index > ', index);
+        } else {
+            fieldId = schema.name;
+            console.log('name > ', schema.name);
+        }
+
+        itemPath = parentPath + fieldId;
 
         schema.attributes = schema.attributes || {};
         schema.attributes['data-path'] = itemPath;
 
-        console.log(parentData);
-        //
-        if (schema.name === 'array-root') {
-            console.log('parentData > ', parentData);
-            console.log('schema > ', schema);
-            parentData.forEach((value, index) => {
-                schema.attributes['value'] = value;
-                schema.name = parentPath + index;
-                $widget = this._createElement(schema);
-                $parent.append($widget);
-            });
-
-        } else {
-            if (parentData[schema.name] === undefined) {
-                parentData[schema.name] = '';
-            }
-
-            schema.attributes['value'] = parentData[schema.name];
-            $widget = this._createElement(schema);
-            $parent.append($widget);
+        if (parentData[fieldId] === undefined) {
+            parentData[fieldId] = '';
         }
+        console.log('_manipulateField::fieldId:', fieldId);
+        console.log('parentData:', parentData);
+        console.log('schema:', schema);
+
+        schema.attributes['value'] = parentData[fieldId];
+        $widget = this._createElement(schema);
+        $parent.append($widget);
     }
 
     /**
      *
      */
-    manipulate(schema, parentPath, $parent, parentData) {
+    manipulate(schema, parentPath, $parent, parentData, index) {
         parentPath = $.trim(parentPath) ? $.trim(parentPath) + '::' : '';
 
         if (schema.kind === 'field') {
-            this._manipulateField(schema, parentPath, $parent, parentData);
+            this._manipulateField(schema, parentPath, $parent, parentData, index);
         } else if (schema.kind === 'group') {
             switch (schema.type) {
                 case 'array':
-                    this._manipulateArray(schema, parentPath, $parent, parentData);
+                    this._manipulateArray(schema, parentPath, $parent, parentData, index);
                     break;
                 case 'object':
-                    this._manipulateMap(schema, parentPath, $parent, parentData);
+                    this._manipulateMap(schema, parentPath, $parent, parentData, index);
                     break;
             }
         } else {
@@ -233,7 +291,17 @@ export default class FormGen {
         this.$form = $('<form></form>');
 
         if (this.schema.kind === 'group') {
-            this.manipulate(this.schema, '', this.$form, this.data);
+            if (this.data['root'] === undefined) {
+                let _data;
+
+                _data = {
+                    root: this.data
+                };
+
+                this.data = _data;
+            }
+
+            this.manipulate(this.schema, '', this.$form, this.data, -1);
         }
 
         // console.log(this.data);
@@ -252,6 +320,7 @@ export default class FormGen {
         let $btn = submitButton.getElement();
         $btn.on('click', () => {
             console.log(this.data);
+            console.log(JSON.stringify(this.data));
         });
 
         this.$form.append($btn);
