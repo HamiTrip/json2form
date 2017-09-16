@@ -1,0 +1,46 @@
+{
+  "root": {
+    "x_domain": "xdomain",
+    "flights": {
+      "username": "username value",
+      "client_data": {
+        "lua_formula": "hfjh jkh s 34 () {} [] 523kjfh kj hdjf",
+        "name": "fjkjdfkjsldj"
+      }
+    },
+    "nsp": [
+      {
+        "email": {
+          "email_en_register_template_id": "123",
+          "email_fa_register_template_id": "345"
+        },
+        "sms": {
+          "sms_en_register_template_id": 543,
+          "sms_fa_register_template_id": 368
+        }
+      },
+      {
+        "email": {
+          "email_en_register_template_id": 123,
+          "email_fa_register_template_id": 345
+        },
+        "sms": {
+          "sms_en_register_template_id": 543,
+          "sms_fa_register_template_id": 368
+        }
+      }
+    ],
+    "names": [
+      "ali",
+      "hasan"
+    ],
+    "arrays": [
+      [
+        "arr1"
+      ],
+      [
+        "arr2"
+      ]
+    ]
+  }
+}
