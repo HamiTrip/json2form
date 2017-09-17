@@ -335,6 +335,40 @@
                     "fa": "Damaneye Ix..."
                   }
                 }
+              },
+              {
+                "name": "email_list",
+                "type": "array",
+                "kind": "group",
+                "validations": [
+                  "required",
+                  "numeric"
+                ],
+                "attributes": {
+                  "title": {
+                    "en": "Email List En",
+                    "fa": "لیست ایمیل فا"
+                  },
+                  "placeholder": {
+                    "en": "Email List En...",
+                    "fa": "لیست ایمیل فا..."
+                  }
+                },
+                "children_schema": {
+                  "name": "array_root",
+                  "type": "string",
+                  "kind": "field",
+                  "attributes": {
+                    "title": {
+                      "en": "Email",
+                      "fa": "ایمیل"
+                    },
+                    "placeholder": {
+                      "en": "Email...",
+                      "fa": "ایمیل..."
+                    }
+                  }
+                }
               }
             ]
           },

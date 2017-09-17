@@ -272,7 +272,7 @@ let formGen;
 $.getJSON("data-sample.json", (data) => {
     console.log('data > ', data);
     $.getJSON("schema-sample.json", (schema) => {
-        formGen = new FormGen(schema, data);
+        formGen = new FormGen(schema, {});
 
         $('#form').append(formGen.getForm());
     });

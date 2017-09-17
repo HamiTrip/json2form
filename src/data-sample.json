@@ -40,7 +40,13 @@
         "email_en_ticket_pending_template_id": "2201741",
         "email_fa_ticket_pending_template_id": "2224823",
         "email_en_issued_template_id": "2200981",
-        "email_fa_issued_template_id": "2224822"
+        "email_fa_issued_template_id": "2224822",
+        "email_list": [
+          "email1",
+          "email2",
+          "email3",
+          "email4"
+        ]
       },
       "sms": {
         "sms_en_register_text": "HiHappytrip.ir",

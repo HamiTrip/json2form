@@ -1,5 +1,6 @@
 import * as CONFIG from './elementor/config';
 import * as APP_CONFIG from './config';
+import Grouper from './elementor/grouper';
 import Widget from './elementor/widget';
 
 export default class FormGen {
@@ -11,6 +12,25 @@ export default class FormGen {
     constructor(schema, data) {
         this.schema = schema;
         this.data = data || {};
+    }
+
+    _deleteData(path) {
+        let _path;
+        let currentObj;
+
+        _path = path.split(CONFIG.PATH_SEPARATOR);
+
+        currentObj = this.data;
+
+        _path.forEach((field, index) => {
+            if (_path.length === index + 1) {
+                delete currentObj[field];
+
+                return;
+            }
+
+            currentObj = currentObj[field];
+        });
     }
 
     _uuid() {
@@ -30,46 +50,15 @@ export default class FormGen {
      *
      * @param type
      * @param attributes
+     * @param options
      * @private
      */
-    _$group(type, attributes) {
-        let $group;
+    _$group(type, attributes, options) {
+        let group;
 
-        $group = $('<div>');
-        $group.css({
-            border: '3px solid #000',
-            padding: '15px',
-        });
+        group = new Grouper(type, attributes, options);
 
-        switch (type) {
-            case 1:
-                let $legend;
-
-                $group = $('<fieldset>');
-                $group.css({
-                    border: '2px solid #000',
-                    padding: '10px 15px',
-                    margin: 'auto auto 35px auto'
-                });
-                $legend = $('<legend>');
-                $legend.css({
-                    'text-indent': '15px',
-                });
-                $legend.text(attributes.text);
-                $group.append($legend);
-
-                break;
-            case 2:
-                $group = $('<div>');
-                $group.css({
-                    border: '1px solid #000',
-                    background: '#eee',
-                    padding: '20px',
-                    margin: '10px',
-                });
-        }
-
-        return $group;
+        return group;
     }
 
     /**
@@ -261,11 +250,22 @@ export default class FormGen {
         return array.length - 1;
     }
 
+    /**
+     *
+     * @param schema
+     * @param parentPath
+     * @param $parent
+     * @param parentData
+     * @param index
+     * @private
+     */
     _manipulateArray(schema, parentPath, $parent, parentData, index) {
         let itemPath;
-        let $group;
+        let group;
         let fieldId;
         let btnDeleteOptions;
+
+        btnDeleteOptions = {};
 
         if (index !== -1) {
             fieldId = index;
@@ -280,32 +280,76 @@ export default class FormGen {
             parentData[fieldId] = [];
         }
 
-        $group = this._$group(1, {text: fieldId});
-
-        btnDeleteOptions = {
-            events: {
-                click: () => {
-                    console.log($group);
-                    // $group.get(0).remove();
-                }
-            }
-        };
+        group = this._$group(1, {text: fieldId}, {});
 
         if (parentData.length === 0) {
             let _index;
+            let path;
+            let $listItemGroup;
+            let params;
 
             _index = this._push(schema.children_schema, parentData[fieldId]);
+            path = itemPath + '::' + _index;
 
-            btnDeleteOptions.path = itemPath + '::' + _index;
+            params = {
+                type: '',
+                attributes: {},
+                options: {
+                    path: path,
+                    groupPath: path,
+                    deleteCb: ((_path) => {
+                        return () => {
+                            this._deleteData(_path);
+                        };
+                    })(path)
+                }
+            };
 
-            $group.append(this._$button('delete', btnDeleteOptions));
-            this.manipulate($.extend(true, {}, schema.children_schema), itemPath, $group, parentData[fieldId], _index);
+            $listItemGroup = (new Grouper(params.type, params.attributes, params.options)).$getListItemGroup();
+
+            this.manipulate(
+                $.extend(true, {}, schema.children_schema),
+                itemPath,
+                $listItemGroup,
+                parentData[fieldId],
+                _index
+            );
+
+            group.get().append($listItemGroup);
         } else {
             parentData[fieldId].forEach((field, index) => {
-                btnDeleteOptions.path = itemPath + '::' + index;
-                $group.append(this._$button('delete', btnDeleteOptions));
-                this.manipulate($.extend(true, {}, schema.children_schema), itemPath, $group, parentData[fieldId], index);
-            })
+                let path;
+                let $listItemGroup;
+                let params;
+
+                path = itemPath + '::' + index;
+
+                params = {
+                    type: '',
+                    attributes: {},
+                    options: {
+                        path: path,
+                        groupPath: path,
+                        deleteCb: ((_path) => {
+                            return () => {
+                                this._deleteData(_path);
+                            };
+                        })(path)
+                    }
+                };
+
+                $listItemGroup = (new Grouper(params.type, params.attributes, params.options)).$getListItemGroup();
+
+                this.manipulate(
+                    $.extend(true, {}, schema.children_schema),
+                    itemPath,
+                    $listItemGroup,
+                    parentData[fieldId],
+                    index
+                );
+
+                group.get().append($listItemGroup);
+            });
         }
 
         let $btn;
@@ -315,44 +359,77 @@ export default class FormGen {
             events: {
                 click: () => {
                     let _index;
+                    let path;
+                    let $listItemGroup;
+                    let params;
 
                     _index = this._push(schema.children_schema, parentData[fieldId]);
-                    btnDeleteOptions.path = itemPath + '::' + _index;
+                    path = itemPath + '::' + _index;
 
-                    $group.append(this._$button('delete', btnDeleteOptions));
+                    params = {
+                        type: '',
+                        attributes: {},
+                        options: {
+                            path: path,
+                            groupPath: path,
+                            deleteCb: ((_path) => {
+                                return () => {
+                                    this._deleteData(_path);
+                                };
+                            })(path)
+                        }
+                    };
+
+                    $listItemGroup = (new Grouper(params.type, params.attributes, params.options)).$getListItemGroup();
 
                     this.manipulate(
-                        schema.children_schema,
+                        $.extend(true, {}, schema.children_schema),
                         itemPath,
-                        $group,
+                        $listItemGroup,
                         parentData[fieldId],
-                        _index)
-                    ;
+                        _index
+                    );
+
+                    group.get().append($listItemGroup);
                 }
             }
         };
 
         $btn = this._$button('add', btnOptions);
 
-        $group.prepend($btn);
-        $parent.append($group);
+        group.get().prepend($btn);
+        $parent.append(group.get());
     }
 
+    /**
+     *
+     * @param schema
+     * @param parentPath
+     * @param $parent
+     * @param parentData
+     * @param index
+     * @private
+     */
     _manipulateMap(schema, parentPath, $parent, parentData, index) {
         let itemPath;
-        let $group;
+        let group;
         let fieldId;
 
         if (index !== -1) {
             fieldId = index;
-            $group = this._$group(2, {text: fieldId});
             index = -1;
         } else {
             fieldId = schema.name;
-            $group = this._$group(1, {text: fieldId});
+            group = this._$group(1, {text: fieldId}, {});
         }
 
         itemPath = parentPath + fieldId;
+
+        if (isNaN(fieldId)) {
+            group = this._$group(1, {text: fieldId}, {});
+        } else {
+            group = this._$group(2, {text: fieldId, 'data-group-path': itemPath}, {});
+        }
 
         if (parentData[fieldId] === undefined) {
             parentData[fieldId] = {}
@@ -363,10 +440,10 @@ export default class FormGen {
                 continue;
             }
 
-            this.manipulate(schema.children[item], itemPath, $group, parentData[fieldId], index);
+            this.manipulate(schema.children[item], itemPath, group.get(), parentData[fieldId], index);
         }
 
-        $parent.append($group);
+        $parent.append(group.get());
     }
 
     _manipulateField(schema, parentPath, $parent, parentData, index) {
