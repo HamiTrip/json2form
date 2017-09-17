@@ -71,5 +71,10 @@
       "username": "rew",
       "password": "wer"
     }
+  ],
+  "names": [
+    "name1",
+    "name2",
+    "name3"
   ]
 }

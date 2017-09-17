@@ -22,13 +22,13 @@ export default class Button extends Base {
         let $element;
 
         $element = $('<button>');
-        $element.text(this.attributes.title);
+        $element.text(this.attributes.text);
 
         this.$element = $element;
 
     }
 
     _initEvents() {
-
+        this.$element.on('click', this.options.events.click);
     }
 }

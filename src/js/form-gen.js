@@ -26,6 +26,131 @@ export default class FormGen {
         return uuid;
     }
 
+    /**
+     *
+     * @param type
+     * @param attributes
+     * @private
+     */
+    _$group(type, attributes) {
+        let $group;
+
+        $group = $('<div>');
+        $group.css({
+            border: '3px solid #000',
+            padding: '15px',
+        });
+
+        switch (type) {
+            case 1:
+                let $legend;
+
+                $group = $('<fieldset>');
+                $group.css({
+                    border: '2px solid #000',
+                    padding: '10px 15px',
+                    margin: 'auto auto 35px auto'
+                });
+                $legend = $('<legend>');
+                $legend.css({
+                    'text-indent': '15px',
+                });
+                $legend.text(attributes.text);
+                $group.append($legend);
+
+                break;
+            case 2:
+                $group = $('<div>');
+                $group.css({
+                    border: '1px solid #000',
+                    background: '#eee',
+                    padding: '20px',
+                    margin: '10px',
+                });
+        }
+
+        return $group;
+    }
+
+    /**
+     *
+     * @param type
+     * @param options
+     * @returns {*}
+     * @private
+     */
+    _$button(type, options) {
+        let button;
+        let attributes;
+
+        switch (type) {
+            case 'add':
+                attributes = {
+                    type: CONFIG.BUTTON_TYPES.BUTTON,
+                    text: {
+                        en: '+',
+                        fa: '+'
+                    },
+                    title: {
+                        en: 'Add',
+                        fa: 'افزودن'
+                    },
+                    class: 'btn btn-info',
+                    'data-path': options.path,
+                };
+
+                button = new Widget(CONFIG.WIDGETS.BUTTON, attributes, {
+                    events: {
+                        click: options.events.click,
+                    }
+                });
+
+                break;
+            case 'submit':
+                attributes = {
+                    type: CONFIG.BUTTON_TYPES.BUTTON,
+                    title: {
+                        en: 'Submit',
+                        fa: 'ارسال'
+                    },
+                    class: 'btn btn-primary',
+                    'data-path': options.path,
+                };
+
+                button = new Widget(CONFIG.WIDGETS.BUTTON, attributes, {
+                    events: {
+                        click: options.events.click,
+                    }
+                });
+
+                break;
+            case 'delete':
+                attributes = {
+                    type: CONFIG.BUTTON_TYPES.BUTTON,
+                    text: {
+                        en: '-',
+                        fa: '-'
+                    },
+                    title: {
+                        en: 'Delete',
+                        fa: 'حذف'
+                    },
+                    class: 'btn btn-danger',
+                    'data-path': options.path,
+                };
+
+                button = new Widget(CONFIG.WIDGETS.BUTTON, attributes, {
+                    events: {
+                        click: options.events.click,
+                    }
+                });
+
+                break;
+        }
+
+        return button.getElement();
+    }
+
     _getWidgetType(apiType) {
         let widgetType;
 
@@ -55,11 +180,6 @@ export default class FormGen {
                 defaultAttributes.class = 'form-control';
 
                 break;
-            case CONFIG.WIDGETS.BUTTON:
-                defaultAttributes.class = 'btn';
-
-                break;
-
             case CONFIG.WIDGETS.TEXTAREA:
                 defaultAttributes.class = 'form-control';
 
@@ -80,10 +200,10 @@ export default class FormGen {
 
     /**
      *
-     * @param item
+     * @param schema
      * @param attributes
      */
-    _createElement(item) {
+    _createElement(schema) {
         let widget;
         let widgetType;
         let label;
@@ -93,9 +213,9 @@ export default class FormGen {
         let validations;
         let attributes;
 
-        type = item.type;
-        validations = item.validations || [];
-        attributes = item.attributes;
+        type = schema.type;
+        validations = schema.validations || [];
+        attributes = schema.attributes;
 
         options = {
             locale: 'en',
@@ -145,6 +265,7 @@ export default class FormGen {
         let itemPath;
         let $group;
         let fieldId;
+        let btnDeleteOptions;
 
         if (index !== -1) {
             fieldId = index;
@@ -155,41 +276,64 @@ export default class FormGen {
 
         itemPath = parentPath + fieldId;
 
-
         if (parentData[fieldId] === undefined) {
             parentData[fieldId] = [];
         }
 
-        $group = $('<fieldset style="border: 3px solid #000;padding: 10px 15px;"></fieldset>');
-        $group.append($('<legend style="text-indent: 15px;">').text(fieldId));
+        $group = this._$group(1, {text: fieldId});
+
+        btnDeleteOptions = {
+            events: {
+                click: () => {
+                    console.log($group);
+                    // $group.get(0).remove();
+                }
+            }
+        };
 
         if (parentData.length === 0) {
             let _index;
 
             _index = this._push(schema.children_schema, parentData[fieldId]);
 
+            btnDeleteOptions.path = itemPath + '::' + _index;
+
+            $group.append(this._$button('delete', btnDeleteOptions));
             this.manipulate($.extend(true, {}, schema.children_schema), itemPath, $group, parentData[fieldId], _index);
         } else {
             parentData[fieldId].forEach((field, index) => {
+                btnDeleteOptions.path = itemPath + '::' + index;
+                $group.append(this._$button('delete', btnDeleteOptions));
                 this.manipulate($.extend(true, {}, schema.children_schema), itemPath, $group, parentData[fieldId], index);
             })
         }
 
         let $btn;
-        $btn = $('<button type="button" class="btn btn-info">+</button>');
-        $btn.on('click', () => {
-            let _index;
+        let btnOptions;
 
-            _index = this._push(schema.children_schema, parentData[fieldId]);
-            console.log(parentData[fieldId]);
-            this.manipulate(
-                schema.children_schema,
-                itemPath,
-                $group,
-                parentData[fieldId],
-                _index)
-            ;
-        });
+        btnOptions = {
+            events: {
+                click: () => {
+                    let _index;
+
+                    _index = this._push(schema.children_schema, parentData[fieldId]);
+                    btnDeleteOptions.path = itemPath + '::' + _index;
+
+                    $group.append(this._$button('delete', btnDeleteOptions));
+
+                    this.manipulate(
+                        schema.children_schema,
+                        itemPath,
+                        $group,
+                        parentData[fieldId],
+                        _index)
+                    ;
+                }
+            }
+        };
+
+        $btn = this._$button('add', btnOptions);
+
         $group.prepend($btn);
         $parent.append($group);
     }
@@ -201,24 +345,18 @@ export default class FormGen {
 
         if (index !== -1) {
             fieldId = index;
+            $group = this._$group(2, {text: fieldId});
             index = -1;
-            console.log('index > ', index);
         } else {
             fieldId = schema.name;
-            console.log('name > ', schema.name);
+            $group = this._$group(1, {text: fieldId});
         }
-
-        console.log('_manipulateMap::fieldId:', fieldId);
-        console.log('parentData:', parentData);
 
         itemPath = parentPath + fieldId;
 
         if (parentData[fieldId] === undefined) {
             parentData[fieldId] = {}
         }
-
-        $group = $('<fieldset style="border: 1px solid #000; padding: 20px;"></fieldset>');
-        $group.append($('<legend style="text-indent: 15px;">').text(fieldId));
 
         for (let item in schema.children) {
             if (!schema.children.hasOwnProperty(item)) {
@@ -239,10 +377,8 @@ export default class FormGen {
         if (index !== -1) {
             fieldId = index;
             index = -1;
-            console.log('index > ', index);
         } else {
             fieldId = schema.name;
-            console.log('name > ', schema.name);
         }
 
         itemPath = parentPath + fieldId;
@@ -253,9 +389,6 @@ export default class FormGen {
         if (parentData[fieldId] === undefined) {
             parentData[fieldId] = '';
         }
-        console.log('_manipulateField::fieldId:', fieldId);
-        console.log('parentData:', parentData);
-        console.log('schema:', schema);
 
         schema.attributes['value'] = parentData[fieldId];
         $widget = this._createElement(schema);
@@ -285,8 +418,8 @@ export default class FormGen {
     }
 
     getForm() {
-        let submitButton;
-        let attributes;
+        let $btnSubmit;
+        let btnOptions;
 
         this.$form = $('<form></form>');
 
@@ -304,26 +437,18 @@ export default class FormGen {
             this.manipulate(this.schema, '', this.$form, this.data, -1);
         }
 
-        // console.log(this.data);
-
-        attributes = {
-            type: CONFIG.BUTTON_TYPES.BUTTON,
-            title: {
-                en: 'Submit',
-                fa: 'ارسال'
-            },
-            class: 'btn-primary',
+        btnOptions = {
+            events: {
+                click: () => {
+                    console.log(this.data);
+                    console.log(JSON.stringify(this.data));
+                }
+            }
         };
 
-        submitButton = new Widget(CONFIG.WIDGETS.BUTTON, this._extendAttributes(CONFIG.WIDGETS.BUTTON, attributes), {});
+        $btnSubmit = this._$button('submit', btnOptions);
 
-        let $btn = submitButton.getElement();
-        $btn.on('click', () => {
-            console.log(this.data);
-            console.log(JSON.stringify(this.data));
-        });
-
-        this.$form.append($btn);
+        this.$form.append($btnSubmit);
 
         return this.$form;
     }

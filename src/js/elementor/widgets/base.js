@@ -8,7 +8,7 @@ export default class Base {
         options.locale = (options.locale || 'fa').toLowerCase();
 
         this.options = options;
-        this.attributes = attributes;
+        this.attributes = $.extend({}, attributes);
         this.$element = null;
         this.widget = null;
     }
@@ -19,6 +19,13 @@ export default class Base {
         locale = this.options.locale;
 
         this.attributes.title = this.attributes.title ? this.attributes.title[locale] : '';
+
+        if (this.attributes.text) {
+            this.attributes.text = this.attributes.text[locale];
+        } else {
+            this.attributes.text = this.attributes.title;
+        }
+
         this.attributes.placeholder = this.attributes.placeholder ? this.attributes.placeholder[locale] : '';
     }
 

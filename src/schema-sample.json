@@ -512,6 +512,32 @@
       }
     },
     {
+      "name": "names",
+      "type": "array",
+      "kind": "group",
+      "attributes": {
+        "title": {
+          "en": "Names",
+          "fa": "نام ها"
+        }
+      },
+      "children_schema": {
+        "name": "array_root",
+        "type": "string",
+        "kind": "field",
+        "attributes": {
+          "title": {
+            "en": "Name",
+            "fa": "نام"
+          },
+          "placeholder": {
+            "en": "Name...",
+            "fa": "نام..."
+          }
+        }
+      }
+    },
+    {
       "name": "payment_gateways",
       "type": "array",
       "kind": "group",
