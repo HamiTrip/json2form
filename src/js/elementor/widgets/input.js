@@ -33,8 +33,6 @@ export default class Input extends Base {
                 }
             }
         }
-
-        console.log(this.options.validations);
     }
 
     _initEvents() {
