@@ -1,6 +1,5 @@
 export const API_TYPES = {
-    STRING: 'string',
-    NUMBER: 'number',
+    TEXT: 'text',
     BLOB: 'blob',
-    ENUM: 'enum',
+    SELECT: 'select',
 };

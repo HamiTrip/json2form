@@ -1,7 +1,7 @@
 import * as CONFIG from '../config';
 import Base from './base';
 
-export default class Button extends Base {
+export default class Option extends Base {
     constructor(attributes, options) {
         let defaultAttributes;
 
@@ -9,7 +9,7 @@ export default class Button extends Base {
 
         super(attributes, options);
 
-        this._initWidget(CONFIG.WIDGETS.BUTTON, defaultAttributes);
+        this._initWidget(CONFIG.WIDGETS.OPTION, defaultAttributes);
     }
 
     /**
@@ -19,17 +19,11 @@ export default class Button extends Base {
      * @private
      */
     _createElement() {
-        let $element;
-
-        $element = $('<button>');
-        $element.text(this.attributes.text);
-        delete this.attributes.text;
-
-        this.$element = $element;
-
+        this.$element = $('<option>');
+        this.$element.text(this.attributes.text || this.attributes.title);
     }
 
     _initEvents() {
-        this.$element.on('click', this.options.events.click);
+        // There Is Nothing Yet!
     }
 }

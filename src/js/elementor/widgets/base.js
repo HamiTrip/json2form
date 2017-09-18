@@ -7,7 +7,7 @@ export default class Base {
 
         options.locale = (options.locale || 'fa').toLowerCase();
 
-        this.options = options;
+        this.options = $.extend({}, options);
         this.attributes = $.extend({}, attributes);
         this.$element = null;
         this.widget = null;

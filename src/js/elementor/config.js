@@ -15,6 +15,7 @@ export const WIDGETS = {
     INPUT: 'input',
     LABEL: 'label',
     SELECT: 'select',
+    OPTION: 'option',
     CHECKBOX: 'checkbox',
     TEXTAREA: 'textarea',
     HTML: 'html',

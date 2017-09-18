@@ -22,6 +22,8 @@ export default class Input extends Base {
         this.$element = $('<input>');
         this.attributes.type = CONFIG.INPUT_TYPES.TEXT;
 
+        delete this.attributes.text;
+
         if (this.options.validations) {
             for (let inputType in CONFIG.INPUT_TYPES) {
                 if (CONFIG.INPUT_TYPES.hasOwnProperty(inputType)) {
@@ -31,6 +33,8 @@ export default class Input extends Base {
                 }
             }
         }
+
+        console.log(this.options.validations);
     }
 
     _initEvents() {

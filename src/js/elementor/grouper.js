@@ -109,7 +109,6 @@ export default class Grouper {
                     margin: '10px',
                 });
                 $group.attr('data-group-path', this.attributes['data-group-path']);
-                console.log(this.attributes);
 
                 break;
             case 3:

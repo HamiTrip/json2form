@@ -3,6 +3,7 @@ import Input from "./widgets/input";
 import Label from "./widgets/label";
 import TextArea from "./widgets/textarea";
 import Button from "./widgets/button";
+import Select from "./widgets/select";
 
 export default class Widget {
     constructor(widgetType, attributes, options) {
@@ -32,6 +33,10 @@ export default class Widget {
                 break;
             case CONFIG.WIDGETS.BUTTON:
                 widget = new Button(this.attributes, this.options);
+
+                break;
+            case CONFIG.WIDGETS.SELECT:
+                widget = new Select(this.attributes, this.options);
 
                 break;
         }

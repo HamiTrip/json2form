@@ -5,7 +5,7 @@
   "children": [
     {
       "name": "x_domain",
-      "type": "string",
+      "type": "text",
       "kind": "field",
       "validations": [
         "required"
@@ -25,7 +25,7 @@
     },
     {
       "name": "backoffice_base_url",
-      "type": "string",
+      "type": "text",
       "kind": "field",
       "validations": [
         "required",
@@ -46,7 +46,7 @@
     },
     {
       "name": "frontend_title",
-      "type": "string",
+      "type": "text",
       "kind": "field",
       "validations": [
         "required",
@@ -67,7 +67,7 @@
     },
     {
       "name": "frontend_base_url",
-      "type": "string",
+      "type": "text",
       "kind": "field",
       "validations": [
         "required",
@@ -88,7 +88,7 @@
     },
     {
       "name": "support_email",
-      "type": "string",
+      "type": "text",
       "kind": "field",
       "validations": [
         "required",
@@ -109,7 +109,7 @@
     },
     {
       "name": "support_webhook",
-      "type": "string",
+      "type": "text",
       "kind": "field",
       "validations": [
         "required",
@@ -130,7 +130,7 @@
     },
     {
       "name": "exceptions_webhook",
-      "type": "string",
+      "type": "text",
       "kind": "field",
       "validations": [
         "required",
@@ -186,7 +186,7 @@
             "children": [
               {
                 "name": "email_en_register_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -205,7 +205,7 @@
               },
               {
                 "name": "email_fa_register_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -224,7 +224,7 @@
               },
               {
                 "name": "email_en_reset_password_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -243,7 +243,7 @@
               },
               {
                 "name": "email_fa_reset_password_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -262,7 +262,7 @@
               },
               {
                 "name": "email_en_ticket_pending_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -281,7 +281,7 @@
               },
               {
                 "name": "email_fa_ticket_pending_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -300,7 +300,7 @@
               },
               {
                 "name": "email_en_issued_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -319,7 +319,7 @@
               },
               {
                 "name": "email_fa_issued_template_id",
-                "type": "number",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required",
@@ -356,7 +356,7 @@
                 },
                 "children_schema": {
                   "name": "array_root",
-                  "type": "string",
+                  "type": "text",
                   "kind": "field",
                   "attributes": {
                     "title": {
@@ -385,7 +385,7 @@
             "children": [
               {
                 "name": "sms_en_register_text",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -403,7 +403,7 @@
               },
               {
                 "name": "sms_fa_register_text",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -421,7 +421,7 @@
               },
               {
                 "name": "sms_en_issued_text",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -439,7 +439,7 @@
               },
               {
                 "name": "sms_fa_issued_text",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -470,7 +470,7 @@
             "children": [
               {
                 "name": "push_en_issued_notification_title",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -488,7 +488,7 @@
               },
               {
                 "name": "push_en_issued_notification_body",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -506,7 +506,7 @@
               },
               {
                 "name": "push_fa_issued_notification_title",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -524,7 +524,7 @@
               },
               {
                 "name": "push_fa_issued_notification_body",
-                "type": "string",
+                "type": "text",
                 "kind": "field",
                 "validations": [
                   "required"
@@ -557,7 +557,7 @@
       },
       "children_schema": {
         "name": "array_root",
-        "type": "string",
+        "type": "text",
         "kind": "field",
         "attributes": {
           "title": {
@@ -600,7 +600,7 @@
         "children": [
           {
             "name": "currency",
-            "type": "enum",
+            "type": "select",
             "kind": "field",
             "validations": [
               "required",
@@ -619,8 +619,8 @@
             },
             "values": [
               {
-                "value": "irr",
                 "attributes": {
+                  "value": "irr",
                   "title": {
                     "en": "Rials",
                     "fa": "ریال"
@@ -632,8 +632,8 @@
                 }
               },
               {
-                "value": "eur",
                 "attributes": {
+                  "value": "eur",
                   "title": {
                     "en": "Euro",
                     "fa": "یورو"
@@ -648,7 +648,7 @@
           },
           {
             "name": "gateway",
-            "type": "string",
+            "type": "text",
             "kind": "field",
             "validations": [
               "required",
@@ -667,7 +667,7 @@
           },
           {
             "name": "merchant_id",
-            "type": "string",
+            "type": "text",
             "kind": "field",
             "validations": [
               "required",
@@ -686,7 +686,7 @@
           },
           {
             "name": "username",
-            "type": "string",
+            "type": "text",
             "kind": "field",
             "validations": [
               "required",
@@ -705,7 +705,7 @@
           },
           {
             "name": "password",
-            "type": "string",
+            "type": "text",
             "kind": "field",
             "validations": [
               "required",

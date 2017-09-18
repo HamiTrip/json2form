@@ -54,11 +54,7 @@ export default class FormGen {
      * @private
      */
     _$group(type, attributes, options) {
-        let group;
-
-        group = new Grouper(type, attributes, options);
-
-        return group;
+        return new Grouper(type, attributes, options);
     }
 
     /**
@@ -144,10 +140,12 @@ export default class FormGen {
         let widgetType;
 
         switch (apiType) {
-            case APP_CONFIG.API_TYPES.STRING:
-            case APP_CONFIG.API_TYPES.NUMBER:
-            case APP_CONFIG.API_TYPES.ENUM:
+            case APP_CONFIG.API_TYPES.TEXT:
                 widgetType = CONFIG.WIDGETS.INPUT;
+
+                break;
+            case APP_CONFIG.API_TYPES.SELECT:
+                widgetType = CONFIG.WIDGETS.SELECT;
 
                 break;
             case APP_CONFIG.API_TYPES.BLOB:
@@ -170,6 +168,10 @@ export default class FormGen {
 
                 break;
             case CONFIG.WIDGETS.TEXTAREA:
+                defaultAttributes.class = 'form-control';
+
+                break;
+            case CONFIG.WIDGETS.SELECT:
                 defaultAttributes.class = 'form-control';
 
                 break;
@@ -201,15 +203,18 @@ export default class FormGen {
         let type;
         let validations;
         let attributes;
+        let values;
 
         type = schema.type;
         validations = schema.validations || [];
         attributes = schema.attributes;
+        values = schema.values || null;
 
         options = {
             locale: 'en',
             validations: validations,
             data: this.data,
+            values: values,
         };
 
         widgetType = this._getWidgetType(type);
