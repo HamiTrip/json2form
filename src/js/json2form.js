@@ -3,15 +3,19 @@ import * as APP_CONFIG from './config';
 import Grouper from './elementor/grouper';
 import Widget from './elementor/widget';
 
-export default class FormGen {
+export default class JSON2Form {
     /**
      *
      * @param schema
      * @param data
+     * @param options
      */
-    constructor(schema, data) {
+    constructor(schema, data, options) {
         this.schema = schema;
         this.data = data || {};
+
+        this.options = options || {};
+        this.options.locale = this.options.locale || 'en';
     }
 
     _deleteData(path) {
@@ -87,7 +91,8 @@ export default class FormGen {
                 button = new Widget(CONFIG.WIDGETS.BUTTON, attributes, {
                     events: {
                         click: options.events.click,
-                    }
+                    },
+                    locale: this.options.locale,
                 });
 
                 break;
@@ -105,7 +110,8 @@ export default class FormGen {
                 button = new Widget(CONFIG.WIDGETS.BUTTON, attributes, {
                     events: {
                         click: options.events.click,
-                    }
+                    },
+                    locale: this.options.locale,
                 });
 
                 break;
@@ -127,7 +133,8 @@ export default class FormGen {
                 button = new Widget(CONFIG.WIDGETS.BUTTON, attributes, {
                     events: {
                         click: options.events.click,
-                    }
+                    },
+                    locale: this.options.locale,
                 });
 
                 break;
@@ -211,7 +218,7 @@ export default class FormGen {
         values = schema.values || null;
 
         options = {
-            locale: 'en',
+            locale: this.options.locale,
             validations: validations,
             data: this.data,
             values: values,

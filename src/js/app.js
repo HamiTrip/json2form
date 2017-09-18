@@ -1,4 +1,4 @@
-import FormGen from './form-gen';
+import JSON2From from './json2form';
 
 const LOCALE = 'fa';
 
@@ -271,7 +271,13 @@ let formGen;
 
 $.getJSON("data-sample.json", (data) => {
     $.getJSON("schema-sample.json", (schema) => {
-        formGen = new FormGen(schema, data);
+        let options;
+
+        options = {
+            locale: 'en',
+        };
+
+        formGen = new JSON2From(schema, data, options);
 
         $('#form').append(formGen.getForm());
     });
