@@ -1,10 +1,10 @@
 {
-  "name": "form-generator",
+  "name": "json2form",
   "authors": [
     "Yaser Khahani <yaserkh@gmail.com>"
   ],
-  "description": "",
-  "main": "",
+  "description": "Generate Form from JSON Schema and Fill It According to JSON Data",
+  "main": "app.js",
   "license": "MIT",
   "homepage": "",
   "private": true,
