@@ -1,161 +1,156 @@
 {
-  "name": "root",
-  "type": "object",
-  "kind": "group",
   "children": [
     {
-      "name": "x_domain",
-      "type": "text",
-      "kind": "field",
-      "validations": [
-        "required"
-      ],
       "attributes": {
+        "placeholder": {
+          "en": "X Domain...",
+          "fa": "Damaneye Ix..."
+        },
         "title": {
           "en": "X Domain",
           "fa": "damaneye ix"
-        },
+        }
+      },
+      "kind": "field",
+      "name": "x_domain",
+      "type": "text",
+      "validations": [
+        "required"
+      ]
+    },
+    {
+      "attributes": {
         "placeholder": {
           "en": "X Domain...",
           "fa": "Damaneye Ix..."
         },
-        "disabled": false,
-        "readonly": false
-      }
+        "title": {
+          "en": "X Domain",
+          "fa": "damaneye ix"
+        }
+      },
+      "kind": "field",
+      "name": "domain",
+      "type": "text",
+      "validations": [
+        "required"
+      ]
     },
     {
-      "name": "backoffice_base_url",
-      "type": "text",
-      "kind": "field",
-      "validations": [
-        "required",
-        "url"
-      ],
       "attributes": {
+        "placeholder": {
+          "en": "X Domain...",
+          "fa": "Damaneye Ix..."
+        },
         "title": {
           "en": "",
           "fa": ""
-        },
+        }
+      },
+      "kind": "field",
+      "name": "backoffice_base_url",
+      "type": "text",
+      "validations": [
+        "required",
+        "url"
+      ]
+    },
+    {
+      "attributes": {
         "placeholder": {
           "en": "X Domain...",
           "fa": "Damaneye Ix..."
         },
-        "disabled": false,
-        "readonly": false
-      }
-    },
-    {
+        "title": {
+          "en": "",
+          "fa": ""
+        }
+      },
+      "kind": "field",
       "name": "frontend_title",
       "type": "text",
-      "kind": "field",
       "validations": [
         "required",
         "alpha"
-      ],
+      ]
+    },
+    {
       "attributes": {
-        "title": {
-          "en": "",
-          "fa": ""
-        },
         "placeholder": {
           "en": "X Domain...",
           "fa": "Damaneye Ix..."
         },
-        "disabled": false,
-        "readonly": false
-      }
-    },
-    {
+        "title": {
+          "en": "",
+          "fa": ""
+        }
+      },
+      "kind": "field",
       "name": "frontend_base_url",
       "type": "text",
-      "kind": "field",
       "validations": [
         "required",
         "url"
-      ],
+      ]
+    },
+    {
       "attributes": {
-        "title": {
-          "en": "",
-          "fa": ""
-        },
         "placeholder": {
           "en": "X Domain...",
           "fa": "Damaneye Ix..."
         },
-        "disabled": false,
-        "readonly": false
-      }
-    },
-    {
+        "title": {
+          "en": "",
+          "fa": ""
+        }
+      },
+      "kind": "field",
       "name": "support_email",
       "type": "text",
-      "kind": "field",
       "validations": [
         "required",
         "email"
-      ],
+      ]
+    },
+    {
       "attributes": {
-        "title": {
-          "en": "",
-          "fa": ""
-        },
         "placeholder": {
           "en": "X Domain...",
           "fa": "Damaneye Ix..."
         },
-        "disabled": false,
-        "readonly": false
-      }
-    },
-    {
+        "title": {
+          "en": "",
+          "fa": ""
+        }
+      },
+      "kind": "field",
       "name": "support_webhook",
       "type": "text",
-      "kind": "field",
       "validations": [
         "required",
         "url"
-      ],
+      ]
+    },
+    {
       "attributes": {
-        "title": {
-          "en": "",
-          "fa": ""
-        },
         "placeholder": {
           "en": "X Domain...",
           "fa": "Damaneye Ix..."
         },
-        "disabled": false,
-        "readonly": false
-      }
-    },
-    {
+        "title": {
+          "en": "",
+          "fa": ""
+        }
+      },
+      "kind": "field",
       "name": "exceptions_webhook",
       "type": "text",
-      "kind": "field",
       "validations": [
         "required",
         "url"
-      ],
-      "attributes": {
-        "title": {
-          "en": "",
-          "fa": ""
-        },
-        "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
-        },
-        "disabled": false,
-        "readonly": false
-      }
+      ]
     },
     {
-      "name": "nsp",
-      "type": "array",
-      "kind": "group",
-      "validations": [
-        "required"
-      ],
       "attributes": {
         "title": {
           "en": "",
@@ -163,9 +158,6 @@
         }
       },
       "children_schema": {
-        "name": "array_root",
-        "type": "object",
-        "kind": "group",
         "attributes": {
           "title": {
             "en": "",
@@ -174,9 +166,6 @@
         },
         "children": [
           {
-            "name": "email",
-            "type": "object",
-            "kind": "group",
             "attributes": {
               "title": {
                 "en": "",
@@ -185,197 +174,163 @@
             },
             "children": [
               {
-                "name": "email_en_register_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
                 "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
                   "title": {
                     "en": "EmailEn En",
                     "fa": "EmailEn Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_fa_register_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_en_reset_password_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_fa_reset_password_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_en_ticket_pending_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_fa_ticket_pending_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_en_issued_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_fa_issued_template_id",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "email_list",
-                "type": "array",
-                "kind": "group",
-                "validations": [
-                  "required",
-                  "numeric"
-                ],
-                "attributes": {
-                  "title": {
-                    "en": "Email List En",
-                    "fa": "لیست ایمیل فا"
-                  },
-                  "placeholder": {
-                    "en": "Email List En...",
-                    "fa": "لیست ایمیل فا..."
                   }
                 },
-                "children_schema": {
-                  "name": "array_root",
-                  "type": "text",
-                  "kind": "field",
-                  "attributes": {
-                    "title": {
-                      "en": "Email",
-                      "fa": "ایمیل"
-                    },
-                    "placeholder": {
-                      "en": "Email...",
-                      "fa": "ایمیل..."
-                    }
+                "kind": "field",
+                "name": "email_en_register_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailFaId En",
+                    "fa": "EmailFaId Fa"
                   }
-                }
+                },
+                "kind": "field",
+                "name": "email_fa_register_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailEn En",
+                    "fa": "EmailEn Fa"
+                  }
+                },
+                "kind": "field",
+                "name": "email_en_reset_password_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailFaId En",
+                    "fa": "EmailFaId Fa"
+                  }
+                },
+                "kind": "field",
+                "name": "email_fa_reset_password_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailEn En",
+                    "fa": "EmailEn Fa"
+                  }
+                },
+                "kind": "field",
+                "name": "email_en_ticket_pending_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailFaId En",
+                    "fa": "EmailFaId Fa"
+                  }
+                },
+                "kind": "field",
+                "name": "email_fa_ticket_pending_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailEn En",
+                    "fa": "EmailEn Fa"
+                  }
+                },
+                "kind": "field",
+                "name": "email_en_issued_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailFaId En",
+                    "fa": "EmailFaId Fa"
+                  }
+                },
+                "kind": "field",
+                "name": "email_fa_issued_template_id",
+                "type": "text",
+                "validations": [
+                  "required",
+                  "numeric"
+                ]
               }
-            ]
+            ],
+            "kind": "group",
+            "name": "email",
+            "type": "object"
           },
           {
-            "name": "sms",
-            "type": "object",
-            "kind": "group",
             "attributes": {
               "title": {
                 "en": "",
@@ -384,83 +339,83 @@
             },
             "children": [
               {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailEn En",
+                    "fa": "EmailEn Fa"
+                  }
+                },
+                "kind": "field",
                 "name": "sms_en_register_text",
                 "type": "text",
-                "kind": "field",
                 "validations": [
                   "required"
-                ],
+                ]
+              },
+              {
                 "attributes": {
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  },
                   "placeholder": {
                     "en": "X Domain...",
                     "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailFaId En",
+                    "fa": "EmailFaId Fa"
                   }
-                }
-              },
-              {
+                },
+                "kind": "field",
                 "name": "sms_fa_register_text",
                 "type": "text",
-                "kind": "field",
                 "validations": [
                   "required"
-                ],
+                ]
+              },
+              {
                 "attributes": {
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  },
                   "placeholder": {
                     "en": "X Domain...",
                     "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "sms_en_issued_text",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required"
-                ],
-                "attributes": {
+                  },
                   "title": {
                     "en": "EmailEn En",
                     "fa": "EmailEn Fa"
-                  },
+                  }
+                },
+                "kind": "field",
+                "name": "sms_en_issued_text",
+                "type": "text",
+                "validations": [
+                  "required"
+                ]
+              },
+              {
+                "attributes": {
                   "placeholder": {
                     "en": "X Domain...",
                     "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "sms_fa_issued_text",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required"
-                ],
-                "attributes": {
+                  },
                   "title": {
                     "en": "EmailFaId En",
                     "fa": "EmailFaId Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
                   }
-                }
+                },
+                "kind": "field",
+                "name": "sms_fa_issued_text",
+                "type": "text",
+                "validations": [
+                  "required"
+                ]
               }
-            ]
+            ],
+            "kind": "group",
+            "name": "sms",
+            "type": "object"
           },
           {
-            "name": "push",
-            "type": "object",
-            "kind": "group",
             "attributes": {
               "title": {
                 "en": "",
@@ -469,115 +424,95 @@
             },
             "children": [
               {
+                "attributes": {
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailEn En",
+                    "fa": "EmailEn Fa"
+                  }
+                },
+                "kind": "field",
                 "name": "push_en_issued_notification_title",
                 "type": "text",
-                "kind": "field",
                 "validations": [
                   "required"
-                ],
+                ]
+              },
+              {
                 "attributes": {
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  },
                   "placeholder": {
                     "en": "X Domain...",
                     "fa": "Damaneye Ix..."
+                  },
+                  "title": {
+                    "en": "EmailFaId En",
+                    "fa": "EmailFaId Fa"
                   }
-                }
-              },
-              {
+                },
+                "kind": "field",
                 "name": "push_en_issued_notification_body",
                 "type": "text",
-                "kind": "field",
                 "validations": [
                   "required"
-                ],
+                ]
+              },
+              {
                 "attributes": {
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  },
                   "placeholder": {
                     "en": "X Domain...",
                     "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "push_fa_issued_notification_title",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required"
-                ],
-                "attributes": {
+                  },
                   "title": {
                     "en": "EmailEn En",
                     "fa": "EmailEn Fa"
-                  },
+                  }
+                },
+                "kind": "field",
+                "name": "push_fa_issued_notification_title",
+                "type": "text",
+                "validations": [
+                  "required"
+                ]
+              },
+              {
+                "attributes": {
                   "placeholder": {
                     "en": "X Domain...",
                     "fa": "Damaneye Ix..."
-                  }
-                }
-              },
-              {
-                "name": "push_fa_issued_notification_body",
-                "type": "text",
-                "kind": "field",
-                "validations": [
-                  "required"
-                ],
-                "attributes": {
+                  },
                   "title": {
                     "en": "EmailFaId En",
                     "fa": "EmailFaId Fa"
-                  },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
                   }
-                }
+                },
+                "kind": "field",
+                "name": "push_fa_issued_notification_body",
+                "type": "text",
+                "validations": [
+                  "required"
+                ]
               }
-            ]
+            ],
+            "kind": "group",
+            "name": "push",
+            "type": "object"
           }
-        ]
-      }
-    },
-    {
-      "name": "names",
-      "type": "array",
-      "kind": "group",
-      "attributes": {
-        "title": {
-          "en": "Names",
-          "fa": "نام ها"
-        }
-      },
-      "children_schema": {
+        ],
+        "kind": "group",
         "name": "array_root",
-        "type": "text",
-        "kind": "field",
-        "attributes": {
-          "title": {
-            "en": "Name",
-            "fa": "نام"
-          },
-          "placeholder": {
-            "en": "Name...",
-            "fa": "نام..."
-          }
-        }
-      }
-    },
-    {
-      "name": "payment_gateways",
-      "type": "array",
+        "type": "object"
+      },
       "kind": "group",
+      "name": "nsp",
+      "type": "array",
       "validations": [
         "required"
-      ],
+      ]
+    },
+    {
       "attributes": {
         "title": {
           "en": "",
@@ -585,12 +520,6 @@
         }
       },
       "children_schema": {
-        "name": "array_root",
-        "type": "object",
-        "kind": "group",
-        "validations": [
-          ""
-        ],
         "attributes": {
           "title": {
             "en": "",
@@ -599,131 +528,144 @@
         },
         "children": [
           {
-            "name": "currency",
-            "type": "select",
-            "kind": "field",
-            "validations": [
-              "required",
-              "alphanum",
-              "in(irr|eur)"
-            ],
             "attributes": {
-              "title": {
-                "en": "EmailEn En",
-                "fa": "EmailEn Fa"
-              },
               "placeholder": {
                 "en": "X Domain...",
                 "fa": "Damaneye Ix..."
+              },
+              "title": {
+                "en": "EmailEn En",
+                "fa": "EmailEn Fa"
               }
             },
             "values": [
               {
                 "attributes": {
-                  "value": "irr",
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
                   "title": {
                     "en": "Rials",
                     "fa": "ریال"
                   },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
+                  "value": "irr"
                 }
               },
               {
                 "attributes": {
-                  "value": "eur",
+                  "placeholder": {
+                    "en": "X Domain...",
+                    "fa": "Damaneye Ix..."
+                  },
                   "title": {
                     "en": "Euro",
                     "fa": "یورو"
                   },
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  }
+                  "value": "eur"
                 }
               }
+            ],
+            "kind": "field",
+            "name": "currency",
+            "type": "select",
+            "validations": [
+              "required",
+              "alphanum",
+              "in(irr|eur)"
             ]
           },
           {
-            "name": "gateway",
-            "type": "text",
-            "kind": "field",
-            "validations": [
-              "required",
-              "alphanum"
-            ],
             "attributes": {
-              "title": {
-                "en": "EmailFaId En",
-                "fa": "EmailFaId Fa"
-              },
               "placeholder": {
                 "en": "X Domain...",
                 "fa": "Damaneye Ix..."
+              },
+              "title": {
+                "en": "EmailFaId En",
+                "fa": "EmailFaId Fa"
               }
-            }
-          },
-          {
-            "name": "merchant_id",
-            "type": "text",
+            },
             "kind": "field",
+            "name": "gateway",
+            "type": "text",
             "validations": [
               "required",
               "alphanum"
-            ],
+            ]
+          },
+          {
             "attributes": {
+              "placeholder": {
+                "en": "X Domain...",
+                "fa": "Damaneye Ix..."
+              },
               "title": {
                 "en": "EmailEn En",
                 "fa": "EmailEn Fa"
-              },
+              }
+            },
+            "kind": "field",
+            "name": "merchant_id",
+            "type": "text",
+            "validations": [
+              "required",
+              "alphanum"
+            ]
+          },
+          {
+            "attributes": {
               "placeholder": {
                 "en": "X Domain...",
                 "fa": "Damaneye Ix..."
+              },
+              "title": {
+                "en": "EmailFaId En",
+                "fa": "EmailFaId Fa"
               }
-            }
-          },
-          {
+            },
+            "kind": "field",
             "name": "username",
             "type": "text",
-            "kind": "field",
             "validations": [
-              "required",
               "alphanum"
-            ],
-            "attributes": {
-              "title": {
-                "en": "EmailFaId En",
-                "fa": "EmailFaId Fa"
-              },
-              "placeholder": {
-                "en": "X Domain...",
-                "fa": "Damaneye Ix..."
-              }
-            }
+            ]
           },
           {
-            "name": "password",
-            "type": "text",
-            "kind": "field",
-            "validations": [
-              "required",
-              "alphanum"
-            ],
             "attributes": {
-              "title": {
-                "en": "EmailFaId En",
-                "fa": "EmailFaId Fa"
-              },
               "placeholder": {
                 "en": "X Domain...",
                 "fa": "Damaneye Ix..."
+              },
+              "title": {
+                "en": "EmailFaId En",
+                "fa": "EmailFaId Fa"
               }
-            }
+            },
+            "kind": "field",
+            "name": "password",
+            "type": "text",
+            "validations": [
+              "alphanum"
+            ]
           }
+        ],
+        "kind": "group",
+        "name": "array_root",
+        "type": "object",
+        "validations": [
+          ""
         ]
-      }
+      },
+      "kind": "group",
+      "name": "payment_gateways",
+      "type": "array",
+      "validations": [
+        "required"
+      ]
     }
-  ]
+  ],
+  "kind": "group",
+  "name": "root",
+  "type": "object"
 }

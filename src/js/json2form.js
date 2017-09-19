@@ -506,14 +506,7 @@ export default class JSON2Form {
         }
     }
 
-    /**
-     * Generate jQuery Form Element.
-     *
-     * @returns {*}
-     */
-    getForm() {
-        this.$form = $('<form></form>');
-
+    _generateElements() {
         if (this.schema.kind === 'group') {
             if (this.data.root === undefined) {
                 let _data;
@@ -527,6 +520,23 @@ export default class JSON2Form {
 
             this.manipulate(this.schema, '', this.$form, this.data, -1);
         }
+    }
+
+    /**
+     * Generate jQuery Form Element.
+     *
+     * @returns {*}
+     */
+    getForm() {
+        this.$form = $('<form>');
+        this._generateElements();
+
+        return this.$form;
+    }
+
+    getElements() {
+        this.$form = $('<div>');
+        this._generateElements();
 
         return this.$form;
     }

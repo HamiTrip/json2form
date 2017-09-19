@@ -10,7 +10,7 @@ $.getJSON("data-sample.json", (data) => {
             locale: 'en',
         };
 
-        formGen = new JSON2From(schema, {}, options);
+        formGen = new JSON2From(schema, data, options);
 
         $('#btn-submit').on('click', () => {
             console.log(formGen.getData());
