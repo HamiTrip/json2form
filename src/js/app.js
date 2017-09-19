@@ -10,8 +10,12 @@ $.getJSON("data-sample.json", (data) => {
             locale: 'en',
         };
 
-        formGen = new JSON2From(schema, data, options);
+        formGen = new JSON2From(schema, {}, options);
 
-        $('#form').append(formGen.getForm());
+        $('#btn-submit').on('click', () => {
+            console.log(formGen.getData());
+        });
+
+        $('#form').prepend(formGen.getForm());
     });
 });

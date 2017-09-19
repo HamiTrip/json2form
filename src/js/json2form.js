@@ -502,18 +502,20 @@ export default class JSON2Form {
                     break;
             }
         } else {
-            console.log('WTF!');
+            console.log('UnSupport Kind/Type!');
         }
     }
 
+    /**
+     * Generate jQuery Form Element.
+     *
+     * @returns {*}
+     */
     getForm() {
-        let $btnSubmit;
-        let btnOptions;
-
         this.$form = $('<form></form>');
 
         if (this.schema.kind === 'group') {
-            if (this.data['root'] === undefined) {
+            if (this.data.root === undefined) {
                 let _data;
 
                 _data = {
@@ -526,19 +528,18 @@ export default class JSON2Form {
             this.manipulate(this.schema, '', this.$form, this.data, -1);
         }
 
-        btnOptions = {
-            events: {
-                click: () => {
-                    console.log(this.data);
-                    console.log(JSON.stringify(this.data));
-                }
-            }
-        };
-
-        $btnSubmit = this._$button('submit', btnOptions);
-
-        this.$form.append($btnSubmit);
-
         return this.$form;
+    }
+
+    /**
+     * Return Last State of Form Data as Object or String.
+     *
+     * @returns {{object: *, string}}
+     */
+    getData() {
+        return {
+            object: this.data,
+            string: JSON.stringify(this.data),
+        };
     }
 }
