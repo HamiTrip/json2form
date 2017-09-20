@@ -98,42 +98,21 @@ export default class Grouper {
         let $group;
 
         $group = $('<div>');
-        $group.css({
-            border: '3px solid #000',
-            padding: '15px',
-        });
 
         switch (this.type) {
             case 1:
                 let $legend;
 
                 $group = $('<fieldset>');
-                $group.css({
-                    border: '2px solid #000',
-                    padding: '10px 15px',
-                    margin: 'auto auto 35px auto'
-                });
+                $group.addClass('j2f-fieldset');
                 $legend = $('<legend>');
-                $legend.css({
-                    'text-indent': '15px',
-                });
                 $legend.text(this.attributes.text);
                 $group.append($legend);
 
                 break;
             case 2:
                 $group = $('<div>');
-                $group.css({
-                    border: '1px solid #000',
-                    background: '#eee',
-                    padding: '20px',
-                    margin: '10px',
-                });
-                $group.attr('data-group-path', this.attributes['data-group-path']);
-
-                break;
-            case 3:
-                $group = $('<div>');
+                $group.addClass('j2f-fields-group');
                 $group.attr('data-group-path', this.attributes['data-group-path']);
 
                 break;

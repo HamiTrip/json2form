@@ -432,7 +432,7 @@ export default class JSON2Form {
             index = -1;
         } else {
             fieldId = schema.name;
-            group = this._$group(1, {text: fieldId}, {});
+            // group = this._$group(1, {text: fieldId}, {});
         }
 
         itemPath = parentPath + fieldId;
@@ -444,7 +444,7 @@ export default class JSON2Form {
         }
 
         if (parentData[fieldId] === undefined) {
-            parentData[fieldId] = {}
+            parentData[fieldId] = {};
         }
 
         for (let item in schema.children) {
