@@ -292,7 +292,7 @@ export default class JSON2Form {
             parentData[fieldId] = [];
         }
 
-        group = this._$group(1, {text: fieldId}, {});
+        group = this._$group(1, schema.attributes, this.options);
 
         if (parentData.length === 0) {
             let _index;

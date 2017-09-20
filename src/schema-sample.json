@@ -4,11 +4,11 @@
       "attributes": {
         "placeholder": {
           "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "fa": "دامنه ی ایکس..."
         },
         "title": {
           "en": "X Domain",
-          "fa": "damaneye ix"
+          "fa": "دامنه ی ایکس"
         }
       },
       "kind": "field",
@@ -21,12 +21,12 @@
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "en": "X Domain 2...",
+          "fa": "دامنه ی ایکس ۲..."
         },
         "title": {
-          "en": "X Domain",
-          "fa": "damaneye ix"
+          "en": "X Domain 2",
+          "fa": "دامنه ی ایکس ۲"
         }
       },
       "kind": "field",
@@ -39,12 +39,12 @@
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "en": "X Domain 3...",
+          "fa": "دامنه ی ایکس ۳"
         },
         "title": {
-          "en": "",
-          "fa": ""
+          "en": "X Domain 3",
+          "fa": "دامنه ی ایکس ۳"
         }
       },
       "kind": "field",
@@ -58,12 +58,12 @@
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "en": "X Domain 4...",
+          "fa": "دامنه ی ایکس ۴"
         },
         "title": {
-          "en": "",
-          "fa": ""
+          "en": "X Domain 4",
+          "fa": "دامنه ی ایکس ۴"
         }
       },
       "kind": "field",
@@ -77,12 +77,12 @@
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "en": "X Domain 5...",
+          "fa": "دامنه ی ایکس ۵"
         },
         "title": {
-          "en": "",
-          "fa": ""
+          "en": "X Domain 5",
+          "fa": "دامنه ی ایکس ۵"
         }
       },
       "kind": "field",
@@ -96,12 +96,12 @@
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "en": "X Domain 6...",
+          "fa": "دامنه ی ایکس ۶"
         },
         "title": {
-          "en": "",
-          "fa": ""
+          "en": "X Domain 6",
+          "fa": "دامنه ی ایکس ۶"
         }
       },
       "kind": "field",
@@ -115,12 +115,12 @@
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "en": "X Domain 7...",
+          "fa": "دامنه ی ایکس ۷"
         },
         "title": {
-          "en": "",
-          "fa": ""
+          "en": "X Domain 7",
+          "fa": "دامنه ی ایکس ۷"
         }
       },
       "kind": "field",
@@ -134,12 +134,12 @@
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "Damaneye Ix..."
+          "en": "X Domain 8...",
+          "fa": "دامنه ی ایکس ۸"
         },
         "title": {
-          "en": "",
-          "fa": ""
+          "en": "X Domain 8",
+          "fa": "دامنه ی ایکس ۸"
         }
       },
       "kind": "field",
@@ -152,9 +152,9 @@
     },
     {
       "attributes": {
-        "title": {
-          "en": "",
-          "fa": ""
+        "text": {
+          "en": "NSP",
+          "fa": "ان اس پی"
         }
       },
       "children_schema": {
@@ -514,9 +514,9 @@
     },
     {
       "attributes": {
-        "title": {
-          "en": "",
-          "fa": ""
+        "text": {
+          "en": "Payment Gateways",
+          "fa": "درگاه های پرداخت"
         }
       },
       "children_schema": {

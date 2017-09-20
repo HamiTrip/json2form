@@ -13,6 +13,27 @@ export default class Grouper {
         this.attributes = attributes || {};
         this.options = options || {};
         this.$group = null;
+
+        this.attributes = $.extend({}, this.attributes);
+        this.options = $.extend({}, this.options);
+
+        this._localizeAttributes();
+    }
+
+    _localizeAttributes() {
+        let locale;
+
+        locale = this.options.locale;
+
+        this.attributes.title = this.attributes.title ? this.attributes.title[locale] : '';
+
+        if (this.attributes.text) {
+            this.attributes.text = this.attributes.text[locale];
+        } else {
+            this.attributes.text = this.attributes.title;
+        }
+
+        this.attributes.placeholder = this.attributes.placeholder ? this.attributes.placeholder[locale] : '';
     }
 
     appendDom($dom) {

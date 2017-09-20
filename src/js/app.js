@@ -7,7 +7,7 @@ $.getJSON("data-sample.json", (data) => {
         let options;
 
         options = {
-            locale: 'en',
+            locale: 'fa',
         };
 
         formGen = new JSON2From(schema, data, options);
