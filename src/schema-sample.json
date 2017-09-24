@@ -538,7 +538,9 @@
                 "fa": "EmailEn Fa"
               }
             },
-            "values": [
+            "kind": "field",
+            "name": "currency",
+            "options": [
               {
                 "attributes": {
                   "placeholder": {
@@ -548,9 +550,11 @@
                   "title": {
                     "en": "Rials",
                     "fa": "ریال"
-                  },
-                  "value": "irr"
-                }
+                  }
+                },
+                "kind": "field",
+                "name": "irr",
+                "type": "option"
               },
               {
                 "attributes": {
@@ -561,13 +565,13 @@
                   "title": {
                     "en": "Euro",
                     "fa": "یورو"
-                  },
-                  "value": "eur"
-                }
+                  }
+                },
+                "kind": "field",
+                "name": "eur",
+                "type": "option"
               }
             ],
-            "kind": "field",
-            "name": "currency",
             "type": "select",
             "validations": [
               "required",

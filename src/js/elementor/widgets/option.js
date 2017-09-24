@@ -21,6 +21,7 @@ export default class Option extends Base {
     _createElement() {
         this.$element = $('<option>');
         this.$element.text(this.attributes.text || this.attributes.title);
+        this.$element.val(this.options.name);
     }
 
     _initEvents() {

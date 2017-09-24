@@ -22,11 +22,11 @@ export default class Select extends Base {
     _createElement() {
         this.$element = $('<select>');
 
-        if (this.options.values && this.options.values.length > 0) {
-            this.options.values.forEach((value) => {
+        if (this.options.options && this.options.options.length > 0) {
+            this.options.options.forEach((value) => {
                 let option;
 
-                option = new Option(value.attributes, {});
+                option = new Option(value.attributes, value);
 
                 this.$element.append(option.getElement());
             });

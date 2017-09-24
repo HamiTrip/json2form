@@ -210,18 +210,18 @@ export default class JSON2Form {
         let type;
         let validations;
         let attributes;
-        let values;
+        let selectOptions;
 
         type = schema.type;
         validations = schema.validations || [];
         attributes = schema.attributes;
-        values = schema.values || null;
+        selectOptions = schema.options || null;
 
         options = {
             locale: this.options.locale,
             validations: validations,
             data: this.data,
-            values: values,
+            options: selectOptions,
         };
 
         widgetType = this._getWidgetType(type);
@@ -479,7 +479,7 @@ export default class JSON2Form {
             parentData[fieldId] = '';
         }
 
-        schema.attributes['value'] = parentData[fieldId];
+        schema.attributes.value = parentData[fieldId];
         $widget = this._createElement(schema);
         $parent.append($widget);
     }
