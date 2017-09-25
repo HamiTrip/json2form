@@ -1,8 +1,8 @@
 {
   "name": "json2form",
-  "version": "1.0.0",
+  "version": "0.1.7",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "./src/js/json2form.js",
   "dependencies": {},
   "devDependencies": {
     "webpack": "^3.5.6"
