@@ -2,6 +2,7 @@ export const INPUT_TYPES = {
     TEXT: 'text',
     PASSWORD: 'password',
     EMAIL: 'email',
+    HIDDEN: 'hidden',
 };
 
 export const BUTTON_TYPES = {
@@ -12,7 +13,10 @@ export const BUTTON_TYPES = {
 
 export const WIDGETS = {
     BUTTON: 'button',
-    INPUT: 'input',
+    INPUT_TEXT: 'text',
+    INPUT_UUID: 'uuid',
+    INPUT_HIDDEN: 'hidden',
+    INPUT_EMAIL: 'email',
     LABEL: 'label',
     SELECT: 'select',
     OPTION: 'option',

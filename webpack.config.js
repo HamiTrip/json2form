@@ -1,10 +1,12 @@
 const path = require('path');
 
 const config = {
-    entry: "./src/js/app.js",
+    entry: {
+        app: './src/js/app.js',
+    },
     output: {
-        filename: 'app.js',
-        path: path.resolve(__dirname + '/dist/js/')
+        path: path.join(__dirname + '/dist/js/'),
+        filename: '[name].js',
     },
     devtool: 'inline-source-map',
     watch: true

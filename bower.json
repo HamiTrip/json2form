@@ -4,7 +4,7 @@
     "Yaser Khahani <yaserkh@gmail.com>"
   ],
   "description": "Generate Form from JSON Schema and Fill It According to JSON Data",
-  "main": "app.js",
+  "main": "./src/json2form.js",
   "license": "MIT",
   "homepage": "",
   "private": true,

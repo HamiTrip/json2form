@@ -30,11 +30,23 @@ export default class Base {
     }
 
     _initAttributes(defaultAttributes) {
-        this.attributes.class = $.grep([this.attributes.class, defaultAttributes.class], Boolean).join(' ');
-        delete defaultAttributes.class;
+        if (!this.attributes.class && !defaultAttributes.class) {
+            this.attributes.class = $.grep([this.attributes.class, defaultAttributes.class], Boolean).join(' ');
+            delete defaultAttributes.class;
+        }
 
         $.extend(this.attributes, defaultAttributes);
         this.$element.attr(this.attributes || {});
+    }
+
+    _appendToWrapper($element) {
+        if (!this.options.$wrapper) {
+            return $element;
+        }
+
+        this.options.$wrapper.append($element);
+
+        return this.options.$wrapper;
     }
 
     /**
@@ -78,6 +90,6 @@ export default class Base {
     }
 
     getElement() {
-        return this.$element;
+        return this._appendToWrapper(this.$element);
     }
 }

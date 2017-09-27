@@ -148,7 +148,11 @@ export default class JSON2Form {
 
         switch (apiType) {
             case APP_CONFIG.API_TYPES.TEXT:
-                widgetType = CONFIG.WIDGETS.INPUT;
+                widgetType = CONFIG.WIDGETS.INPUT_TEXT;
+
+                break;
+            case APP_CONFIG.API_TYPES.UUID:
+                widgetType = CONFIG.WIDGETS.INPUT_UUID;
 
                 break;
             case APP_CONFIG.API_TYPES.SELECT:
@@ -164,13 +168,15 @@ export default class JSON2Form {
         return widgetType;
     }
 
+
     _extendAttributes(widgetType, attributes) {
         let defaultAttributes;
 
         defaultAttributes = {};
 
         switch (widgetType) {
-            case CONFIG.WIDGETS.INPUT:
+            case CONFIG.WIDGETS.INPUT_TEXT:
+            case CONFIG.WIDGETS.INPUT_EMAIL:
                 defaultAttributes.class = 'form-control';
 
                 break;
@@ -203,8 +209,6 @@ export default class JSON2Form {
      */
     _createElement(schema) {
         let widget;
-        let widgetType;
-        let label;
         let options;
         let $wrapper;
         let type;
@@ -217,30 +221,20 @@ export default class JSON2Form {
         attributes = schema.attributes;
         selectOptions = schema.options || null;
 
+        $wrapper = $('<div>');
+        $wrapper.addClass('form-group');
+
         options = {
             locale: this.options.locale,
             validations: validations,
             data: this.data,
             options: selectOptions,
+            $wrapper: $wrapper,
         };
 
-        widgetType = this._getWidgetType(type);
+        widget = new Widget(this._getWidgetType(type), this._extendAttributes(type, attributes), options);
 
-        widget = new Widget(widgetType, this._extendAttributes(widgetType, attributes), options);
-        label = new Widget(
-            CONFIG.WIDGETS.LABEL,
-            this._extendAttributes(
-                CONFIG.WIDGETS.LABEL,
-                {
-                    title: attributes.title,
-                }
-            ),
-            options
-        );
-
-        $wrapper = $('<div>');
-        $wrapper.addClass('form-group');
-        $wrapper.append(label.getElement(), widget.getElement());
+        $wrapper.append(widget.getElement());
 
         return $wrapper;
     }

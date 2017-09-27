@@ -599,6 +599,11 @@
             ]
           },
           {
+            "kind": "field",
+            "name": "gateway_uuid",
+            "type": "uuid"
+          },
+          {
             "attributes": {
               "placeholder": {
                 "en": "X Domain...",

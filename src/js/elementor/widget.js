@@ -1,5 +1,6 @@
 import * as CONFIG from './config';
-import Input from "./widgets/input";
+import Text from "./widgets/inputs/text";
+import UUID from "./widgets/inputs/uuid";
 import Label from "./widgets/label";
 import TextArea from "./widgets/textarea";
 import Button from "./widgets/button";
@@ -7,7 +8,7 @@ import Select from "./widgets/select";
 
 export default class Widget {
     constructor(widgetType, attributes, options) {
-        this.widget = CONFIG.WIDGETS[widgetType.toUpperCase()];
+        this.widgetType = widgetType.toLowerCase();
         this.attributes = attributes;
         this.options = options;
     }
@@ -18,9 +19,15 @@ export default class Widget {
     getElement() {
         let widget;
 
-        switch (this.widget) {
-            case CONFIG.WIDGETS.INPUT:
-                widget = new Input(this.attributes, this.options);
+        switch (this.widgetType) {
+            case CONFIG.WIDGETS.INPUT_TEXT:
+            case CONFIG.WIDGETS.INPUT_HIDDEN:
+            case CONFIG.WIDGETS.INPUT_EMAIL:
+                widget = new Text(this.attributes, this.options);
+
+                break;
+            case CONFIG.WIDGETS.INPUT_UUID:
+                widget = new UUID(this.attributes, this.options);
 
                 break;
             case CONFIG.WIDGETS.LABEL:

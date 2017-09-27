@@ -1,38 +1,28 @@
-import * as CONFIG from '../config';
 import Base from './base';
+import Label from './label';
 
 export default class Input extends Base {
     constructor(attributes, options) {
-        let defaultAttributes;
-
-        defaultAttributes = {};
-
         super(attributes, options);
+    }
 
-        this._initWidget(CONFIG.WIDGETS.INPUT, defaultAttributes);
+    _createLabel() {
+        let label;
+
+        label = new Label(
+            this.attributes,
+            this.options
+        );
+
+        this._appendToWrapper(label.getElement());
     }
 
     /**
-     * Only Call this Method from Base.
      *
-     * @returns {*|jQuery|HTMLElement}
-     * @private
+     * @protected
      */
     _createElement() {
-        this.$element = $('<input>');
-        this.attributes.type = CONFIG.INPUT_TYPES.TEXT;
-
-        delete this.attributes.text;
-
-        if (this.options.validations) {
-            for (let inputType in CONFIG.INPUT_TYPES) {
-                if (CONFIG.INPUT_TYPES.hasOwnProperty(inputType)) {
-                    if (this.options.validations.includes(CONFIG.INPUT_TYPES[inputType])) {
-                        this.attributes.type = CONFIG.INPUT_TYPES[inputType];
-                    }
-                }
-            }
-        }
+        // Can be Overridden.
     }
 
     _initEvents() {

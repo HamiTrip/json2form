@@ -5,6 +5,7 @@
   "main": "./src/js/json2form.js",
   "dependencies": {},
   "devDependencies": {
+    "uuid": "^3.1.0",
     "webpack": "^3.5.6"
   },
   "scripts": {
