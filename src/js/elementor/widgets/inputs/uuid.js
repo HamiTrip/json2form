@@ -1,4 +1,4 @@
-import * as UUIDv4 from 'uuid/v4';
+import v4 from 'uuid/v4';
 import * as CONFIG from '../../config';
 import Input from './../input';
 
@@ -24,9 +24,9 @@ export default class UUID extends Input {
     _createElement() {
         this.$element = $('<input>');
 
-        this.attributes.type = CONFIG.INPUT_TYPES.TEXT;
+        this.attributes.type = CONFIG.INPUT_TYPES.HIDDEN;
 
-        this.attributes.value = this.attributes.value || UUIDv4();
+        this.attributes.value = this.attributes.value || v4();
         this._updateData(this.attributes.value, this.attributes['data-path']);
     }
 
