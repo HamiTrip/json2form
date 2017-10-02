@@ -94,7 +94,8 @@
               "en": "Enter Payir completely..."
             },
             "title": {
-              "en": "Payir"
+              "en": "Payir",
+              "fa": "پای آی آر"
             }
           },
           "children_schema": {
@@ -931,7 +932,8 @@
                 "en": "Enter Sms completely..."
               },
               "title": {
-                "en": "Sms"
+                "en": "Sms",
+                "fa": "اس ام اس"
               }
             },
             "children": [

@@ -320,6 +320,7 @@ export default class JSON2Form {
                 type: '',
                 attributes: {},
                 options: {
+                    locale: this.options.locale,
                     path: path,
                     groupPath: path,
                     deleteCb: ((_path) => {
@@ -353,6 +354,7 @@ export default class JSON2Form {
                     type: '',
                     attributes: {},
                     options: {
+                        locale: this.options.locale,
                         path: path,
                         groupPath: path,
                         deleteCb: ((_path) => {
@@ -363,7 +365,7 @@ export default class JSON2Form {
                     }
                 };
 
-                $listItemGroup = (new Grouper(params.type, params.attributes, params.options)).$getListItemGroup();
+                $listItemGroup = (new Grouper(params.type, schema.attributes, params.options)).$getListItemGroup();
 
                 this.manipulate(
                     $.extend(true, {}, schema.children_schema),
@@ -395,6 +397,7 @@ export default class JSON2Form {
                         type: '',
                         attributes: {},
                         options: {
+                            locale: this.options.locale,
                             path: path,
                             groupPath: path,
                             deleteCb: ((_path) => {
@@ -451,9 +454,10 @@ export default class JSON2Form {
         itemPath = parentPath + fieldId;
 
         if (isNaN(fieldId)) {
-            group = this._$group(1, {text: fieldId}, {});
+            group = this._$group(1, schema.attributes, this.options);
         } else {
-            group = this._$group(2, {text: fieldId, 'data-group-path': itemPath}, {});
+            schema.attributes['data-group-path'] = itemPath;
+            group = this._$group(2, schema.attributes, this.options);
         }
 
         if (parentData[fieldId] === undefined) {

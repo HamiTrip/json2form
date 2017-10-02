@@ -10,12 +10,9 @@ export default class Grouper {
      */
     constructor(type, attributes, options) {
         this.type = type;
-        this.attributes = attributes || {};
-        this.options = options || {};
+        this.attributes = $.extend({}, attributes);
+        this.options = $.extend({}, options);
         this.$group = null;
-
-        this.attributes = $.extend({}, this.attributes);
-        this.options = $.extend({}, this.options);
 
         this._localizeAttributes();
     }
@@ -25,15 +22,21 @@ export default class Grouper {
 
         locale = this.options.locale;
 
-        this.attributes.title = this.attributes.title ? this.attributes.title[locale] : '';
+        if (typeof this.attributes.title === 'object') {
+            this.attributes.title = locale in this.attributes.title ? this.attributes.title[locale] : this.attributes.title.en;
+        }
 
         if (this.attributes.text) {
-            this.attributes.text = this.attributes.text[locale];
+            if (typeof this.attributes.text === 'object') {
+                this.attributes.text = locale in this.attributes.text ? this.attributes.text[locale] : this.attributes.text.en;
+            }
         } else {
             this.attributes.text = this.attributes.title;
         }
 
-        this.attributes.placeholder = this.attributes.placeholder ? this.attributes.placeholder[locale] : '';
+        if (typeof this.attributes.placeholder === 'object') {
+            this.attributes.placeholder = locale in this.attributes.placeholder ? this.attributes.placeholder[locale] : this.attributes.placeholder.en;
+        }
     }
 
     appendDom($dom) {
