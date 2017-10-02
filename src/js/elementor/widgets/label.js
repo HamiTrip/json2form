@@ -12,6 +12,10 @@ export default class Label extends Base {
         this._initWidget(CONFIG.WIDGETS.LABEL, defaultAttributes);
     }
 
+    _createValidationErrors() {
+        // No Validation Errors Is Required!
+    }
+
     _createLabel() {
         // It Doesn't Needs to Label!
     }

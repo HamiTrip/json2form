@@ -10,6 +10,8 @@ export default class Base {
         this.options = $.extend({}, options);
         this.attributes = $.extend({}, attributes);
         this.$element = null;
+        this.$label = null;
+        this.$validationErrors = null;
         this.widget = null;
     }
 
@@ -47,6 +49,8 @@ export default class Base {
 
     _appendToWrapper($element) {
         if (!this.options.$wrapper) {
+            this.options.$wrapper = $element;
+
             return $element;
         }
 
@@ -55,21 +59,47 @@ export default class Base {
         return this.options.$wrapper;
     }
 
+    _createValidationErrors() {
+        let $wrapper;
+
+        if (!this.options.validationErrors) {
+            return;
+        }
+
+        $wrapper = $('<small>');
+        $wrapper.addClass('help-block');
+        $wrapper.text(this.options.validationErrors.validator_error);
+
+        this.options.$wrapper.addClass('has-error');
+
+        this.$validationErrors = $wrapper;
+    }
+
+    /**
+     * Create Label Widget.
+     *
+     * @private
+     */
     _createLabel() {
         // Needs to be Overridden.
     }
 
     /**
-     * Override It from Widgets Class.
+     * Create jQuery Widget Element.
      *
      * @private
      */
     _createElement() {
-        console.error('CreateElement: Override Me Plz!');
+        // Needs to be Overridden.
     }
 
+    /**
+     * Event Initializer.
+     *
+     * @private
+     */
     _initEvents() {
-        console.error('Events: Override Me Plz!');
+        // Needs to be Overridden.
     }
 
     _initWidget(widget, defaultAttributes) {
@@ -78,6 +108,7 @@ export default class Base {
         this._localizeAttributes();
         this._createLabel();
         this._createElement();
+        this._createValidationErrors();
         this._initAttributes(defaultAttributes);
         this._initEvents();
     }
@@ -101,6 +132,10 @@ export default class Base {
     }
 
     getElement() {
-        return this._appendToWrapper(this.$element);
+        this._appendToWrapper(this.$label);
+        this._appendToWrapper(this.$element);
+        this._appendToWrapper(this.$validationErrors);
+
+        return this.options.$wrapper;
     }
 }

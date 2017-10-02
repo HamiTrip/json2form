@@ -37,6 +37,24 @@ export default class JSON2Form {
         });
     }
 
+    _getValidationError(path) {
+        let validation;
+
+        if (!this.options.validationErrors || !Array.isArray(this.options.validationErrors)) {
+            return;
+        }
+
+        validation = null;
+
+        this.options.validationErrors.forEach((item) => {
+            if (item.field_path === path && validation === null) {
+                validation = item;
+            }
+        });
+
+        return validation;
+    }
+
     _uuid() {
         let uuid = "", i, random;
         for (i = 0; i < 32; i++) {
@@ -227,6 +245,7 @@ export default class JSON2Form {
         options = {
             locale: this.options.locale,
             validations: validations,
+            validationErrors: schema.validationErrors,
             data: this.data,
             options: selectOptions,
             $wrapper: $wrapper,
@@ -474,6 +493,8 @@ export default class JSON2Form {
         }
 
         schema.attributes.value = parentData[fieldId];
+        schema.validationErrors = this._getValidationError(itemPath);
+
         $widget = this._createElement(schema);
         $parent.append($widget);
     }

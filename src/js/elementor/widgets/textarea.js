@@ -21,7 +21,7 @@ export default class TextArea extends Base {
             this.options
         );
 
-        this._appendToWrapper(label.getElement());
+        this.$label = label.getElement();
     }
 
     /**

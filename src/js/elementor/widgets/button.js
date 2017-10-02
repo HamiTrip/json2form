@@ -12,8 +12,12 @@ export default class Button extends Base {
         this._initWidget(CONFIG.WIDGETS.BUTTON, defaultAttributes);
     }
 
+    _createValidationErrors() {
+        // No Validation Errors Is Required!
+    }
+
     _createLabel() {
-        // No Label Is Required.
+        // No Label Required.
     }
 
     /**

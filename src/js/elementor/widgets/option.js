@@ -12,6 +12,10 @@ export default class Option extends Base {
         this._initWidget(CONFIG.WIDGETS.OPTION, defaultAttributes);
     }
 
+    _createValidationErrors() {
+        // No Validation Errors Is Required!
+    }
+
     _createLabel() {
         // No Label Is Required.
     }

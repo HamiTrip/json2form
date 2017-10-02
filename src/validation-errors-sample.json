@@ -1,0 +1,12 @@
+[
+  {
+    "field_name": "support_email",
+    "field_path": "root::support_email",
+    "validator_error": "این فیلد اجباری است."
+  },
+  {
+    "field_name": "backoffice_base_url",
+    "field_path": "root::backoffice_base_url",
+    "validator_error": "فرمت آدرس وب سایت بدرستی رعایت نشده است."
+  }
+]
