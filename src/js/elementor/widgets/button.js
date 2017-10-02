@@ -12,6 +12,10 @@ export default class Button extends Base {
         this._initWidget(CONFIG.WIDGETS.BUTTON, defaultAttributes);
     }
 
+    _createLabel() {
+        // No Label Is Required.
+    }
+
     /**
      * Only Call this Method from Base.
      *

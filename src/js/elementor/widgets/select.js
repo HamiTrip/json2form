@@ -1,6 +1,7 @@
 import * as CONFIG from '../config';
 import Base from './base';
 import Option from "./option";
+import Label from "./label";
 
 export default class Select extends Base {
     constructor(attributes, options) {
@@ -11,6 +12,17 @@ export default class Select extends Base {
         super(attributes, options);
 
         this._initWidget(CONFIG.WIDGETS.SELECT, defaultAttributes);
+    }
+
+    _createLabel() {
+        let label;
+
+        label = new Label(
+            this.attributes,
+            this.options
+        );
+
+        this._appendToWrapper(label.getElement());
     }
 
     /**

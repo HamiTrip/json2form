@@ -18,15 +18,21 @@ export default class Base {
 
         locale = this.options.locale;
 
-        this.attributes.title = this.attributes.title ? this.attributes.title[locale] : '';
+        if (typeof this.attributes.title === 'object') {
+            this.attributes.title = locale in this.attributes.title ? this.attributes.title[locale] : this.attributes.title;
+        }
 
         if (this.attributes.text) {
-            this.attributes.text = this.attributes.text[locale];
+            if (typeof this.attributes.text === 'object') {
+                this.attributes.text = locale in this.attributes.text ? this.attributes.text[locale] : this.attributes.text;
+            }
         } else {
             this.attributes.text = this.attributes.title;
         }
 
-        this.attributes.placeholder = this.attributes.placeholder ? this.attributes.placeholder[locale] : '';
+        if (typeof this.attributes.placeholder === 'object') {
+            this.attributes.placeholder = locale in this.attributes.placeholder ? this.attributes.placeholder[locale] : this.attributes.placeholder;
+        }
     }
 
     _initAttributes(defaultAttributes) {
@@ -49,6 +55,10 @@ export default class Base {
         return this.options.$wrapper;
     }
 
+    _createLabel() {
+        // Needs to be Overridden.
+    }
+
     /**
      * Override It from Widgets Class.
      *
@@ -66,6 +76,7 @@ export default class Base {
         this.widget = CONFIG.WIDGETS[widget.toUpperCase()];
 
         this._localizeAttributes();
+        this._createLabel();
         this._createElement();
         this._initAttributes(defaultAttributes);
         this._initEvents();

@@ -12,6 +12,10 @@ export default class Label extends Base {
         this._initWidget(CONFIG.WIDGETS.LABEL, defaultAttributes);
     }
 
+    _createLabel() {
+        // It Doesn't Needs to Label!
+    }
+
     /**
      * Only Call this Method from Base.
      *
@@ -23,6 +27,8 @@ export default class Label extends Base {
 
         $label = $('<label>');
         $label.text(this.attributes.title);
+
+        this.attributes.class = this.attributes.class.replace(/form-control/g, '');
 
         this.$element = $label;
     }
