@@ -1,6 +1,6 @@
 {
   "name": "json2form",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "",
   "main": "./src/js/json2form.js",
   "dependencies": {},
