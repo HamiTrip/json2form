@@ -1,680 +1,1058 @@
 {
+  "attributes": {
+    "placeholder": {
+      "en": "Enter Root completely..."
+    },
+    "title": {
+      "en": "Root"
+    }
+  },
   "children": [
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain...",
-          "fa": "دامنه ی ایکس..."
+          "en": "Enter Round Precision Insurance completely..."
         },
         "title": {
-          "en": "X Domain",
-          "fa": "دامنه ی ایکس"
+          "en": "Round Precision Insurance"
         }
       },
       "kind": "field",
-      "name": "x_domain",
+      "name": "round_precision_insurance",
       "type": "text",
-      "validations": [
-        "required"
-      ]
+      "validations": []
     },
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain 2...",
-          "fa": "دامنه ی ایکس ۲..."
+          "en": "Enter Domain completely..."
         },
         "title": {
-          "en": "X Domain 2",
-          "fa": "دامنه ی ایکس ۲"
+          "en": "Domain"
         }
       },
       "kind": "field",
       "name": "domain",
       "type": "text",
-      "validations": [
-        "required"
-      ]
+      "validations": []
     },
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain 3...",
-          "fa": "دامنه ی ایکس ۳"
+          "en": "Enter X Domain completely..."
         },
         "title": {
-          "en": "X Domain 3",
-          "fa": "دامنه ی ایکس ۳"
+          "en": "X Domain"
+        }
+      },
+      "kind": "field",
+      "name": "x_domain",
+      "type": "text",
+      "validations": []
+    },
+    {
+      "attributes": {
+        "placeholder": {
+          "en": "Enter Backoffice Base Url completely..."
+        },
+        "title": {
+          "en": "Backoffice Base Url"
         }
       },
       "kind": "field",
       "name": "backoffice_base_url",
       "type": "text",
-      "validations": [
-        "required",
-        "url"
-      ]
+      "validations": []
     },
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain 4...",
-          "fa": "دامنه ی ایکس ۴"
+          "en": "Enter Frontend Base Url completely..."
         },
         "title": {
-          "en": "X Domain 4",
-          "fa": "دامنه ی ایکس ۴"
-        }
-      },
-      "kind": "field",
-      "name": "frontend_title",
-      "type": "text",
-      "validations": [
-        "required",
-        "alpha"
-      ]
-    },
-    {
-      "attributes": {
-        "placeholder": {
-          "en": "X Domain 5...",
-          "fa": "دامنه ی ایکس ۵"
-        },
-        "title": {
-          "en": "X Domain 5",
-          "fa": "دامنه ی ایکس ۵"
+          "en": "Frontend Base Url"
         }
       },
       "kind": "field",
       "name": "frontend_base_url",
       "type": "text",
-      "validations": [
-        "required",
-        "url"
-      ]
+      "validations": []
     },
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain 6...",
-          "fa": "دامنه ی ایکس ۶"
+          "en": "Enter Gateways completely..."
         },
         "title": {
-          "en": "X Domain 6",
-          "fa": "دامنه ی ایکس ۶"
+          "en": "Gateways"
+        }
+      },
+      "children": [
+        {
+          "attributes": {
+            "placeholder": {
+              "en": "Enter Payir completely..."
+            },
+            "title": {
+              "en": "Payir"
+            }
+          },
+          "children_schema": {
+            "attributes": {
+              "placeholder": {
+                "en": "Enter Array Root completely..."
+              },
+              "title": {
+                "en": "Array Root"
+              }
+            },
+            "children": [
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter uuid completely..."
+                  },
+                  "title": {
+                    "en": "uuid"
+                  }
+                },
+                "kind": "field",
+                "name": "uuid",
+                "type": "uuid",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Gateway completely..."
+                  },
+                  "title": {
+                    "en": "Gateway"
+                  }
+                },
+                "kind": "field",
+                "name": "gateway",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Account completely..."
+                  },
+                  "title": {
+                    "en": "Account"
+                  }
+                },
+                "kind": "field",
+                "name": "account",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Logo completely..."
+                  },
+                  "title": {
+                    "en": "Logo"
+                  }
+                },
+                "kind": "field",
+                "name": "logo",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Merchant Id completely..."
+                  },
+                  "title": {
+                    "en": "Merchant Id"
+                  }
+                },
+                "kind": "field",
+                "name": "merchant_id",
+                "type": "text",
+                "validations": []
+              }
+            ],
+            "kind": "group",
+            "name": "array_root",
+            "type": "object",
+            "validations": []
+          },
+          "kind": "group",
+          "name": "payir",
+          "type": "array",
+          "validations": []
+        },
+        {
+          "attributes": {
+            "placeholder": {
+              "en": "Enter Mellat completely..."
+            },
+            "title": {
+              "en": "Mellat"
+            }
+          },
+          "children_schema": {
+            "attributes": {
+              "placeholder": {
+                "en": "Enter Array Root completely..."
+              },
+              "title": {
+                "en": "Array Root"
+              }
+            },
+            "children": [
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Terminal Id completely..."
+                  },
+                  "title": {
+                    "en": "Terminal Id"
+                  }
+                },
+                "kind": "field",
+                "name": "terminal_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Username completely..."
+                  },
+                  "title": {
+                    "en": "Username"
+                  }
+                },
+                "kind": "field",
+                "name": "username",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Password completely..."
+                  },
+                  "title": {
+                    "en": "Password"
+                  }
+                },
+                "kind": "field",
+                "name": "password",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter uuid completely..."
+                  },
+                  "title": {
+                    "en": "uuid"
+                  }
+                },
+                "kind": "field",
+                "name": "uuid",
+                "type": "uuid",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Gateway completely..."
+                  },
+                  "title": {
+                    "en": "Gateway"
+                  }
+                },
+                "kind": "field",
+                "name": "gateway",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Account completely..."
+                  },
+                  "title": {
+                    "en": "Account"
+                  }
+                },
+                "kind": "field",
+                "name": "account",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Logo completely..."
+                  },
+                  "title": {
+                    "en": "Logo"
+                  }
+                },
+                "kind": "field",
+                "name": "logo",
+                "type": "text",
+                "validations": []
+              }
+            ],
+            "kind": "group",
+            "name": "array_root",
+            "type": "object",
+            "validations": []
+          },
+          "kind": "group",
+          "name": "mellat",
+          "type": "array",
+          "validations": []
+        },
+        {
+          "attributes": {
+            "placeholder": {
+              "en": "Enter Parsian completely..."
+            },
+            "title": {
+              "en": "Parsian"
+            }
+          },
+          "children_schema": {
+            "attributes": {
+              "placeholder": {
+                "en": "Enter Array Root completely..."
+              },
+              "title": {
+                "en": "Array Root"
+              }
+            },
+            "children": [
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Logo completely..."
+                  },
+                  "title": {
+                    "en": "Logo"
+                  }
+                },
+                "kind": "field",
+                "name": "logo",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Pin completely..."
+                  },
+                  "title": {
+                    "en": "Pin"
+                  }
+                },
+                "kind": "field",
+                "name": "pin",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter uuid completely..."
+                  },
+                  "title": {
+                    "en": "uuid"
+                  }
+                },
+                "kind": "field",
+                "name": "uuid",
+                "type": "uuid",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Gateway completely..."
+                  },
+                  "title": {
+                    "en": "Gateway"
+                  }
+                },
+                "kind": "field",
+                "name": "gateway",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Account completely..."
+                  },
+                  "title": {
+                    "en": "Account"
+                  }
+                },
+                "kind": "field",
+                "name": "account",
+                "type": "text",
+                "validations": []
+              }
+            ],
+            "kind": "group",
+            "name": "array_root",
+            "type": "object",
+            "validations": []
+          },
+          "kind": "group",
+          "name": "parsian",
+          "type": "array",
+          "validations": []
+        },
+        {
+          "attributes": {
+            "placeholder": {
+              "en": "Enter Saman completely..."
+            },
+            "title": {
+              "en": "Saman"
+            }
+          },
+          "children_schema": {
+            "attributes": {
+              "placeholder": {
+                "en": "Enter Array Root completely..."
+              },
+              "title": {
+                "en": "Array Root"
+              }
+            },
+            "children": [
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter uuid completely..."
+                  },
+                  "title": {
+                    "en": "uuid"
+                  }
+                },
+                "kind": "field",
+                "name": "uuid",
+                "type": "uuid",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Gateway completely..."
+                  },
+                  "title": {
+                    "en": "Gateway"
+                  }
+                },
+                "kind": "field",
+                "name": "gateway",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Account completely..."
+                  },
+                  "title": {
+                    "en": "Account"
+                  }
+                },
+                "kind": "field",
+                "name": "account",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Logo completely..."
+                  },
+                  "title": {
+                    "en": "Logo"
+                  }
+                },
+                "kind": "field",
+                "name": "logo",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Term Id completely..."
+                  },
+                  "title": {
+                    "en": "Term Id"
+                  }
+                },
+                "kind": "field",
+                "name": "term_id",
+                "type": "text",
+                "validations": []
+              }
+            ],
+            "kind": "group",
+            "name": "array_root",
+            "type": "object",
+            "validations": []
+          },
+          "kind": "group",
+          "name": "saman",
+          "type": "array",
+          "validations": []
+        },
+        {
+          "attributes": {
+            "placeholder": {
+              "en": "Enter Zarinpal completely..."
+            },
+            "title": {
+              "en": "Zarinpal"
+            }
+          },
+          "children_schema": {
+            "attributes": {
+              "placeholder": {
+                "en": "Enter Array Root completely..."
+              },
+              "title": {
+                "en": "Array Root"
+              }
+            },
+            "children": [
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Merchant Id completely..."
+                  },
+                  "title": {
+                    "en": "Merchant Id"
+                  }
+                },
+                "kind": "field",
+                "name": "merchant_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter uuid completely..."
+                  },
+                  "title": {
+                    "en": "uuid"
+                  }
+                },
+                "kind": "field",
+                "name": "uuid",
+                "type": "uuid",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Gateway completely..."
+                  },
+                  "title": {
+                    "en": "Gateway"
+                  }
+                },
+                "kind": "field",
+                "name": "gateway",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Account completely..."
+                  },
+                  "title": {
+                    "en": "Account"
+                  }
+                },
+                "kind": "field",
+                "name": "account",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Logo completely..."
+                  },
+                  "title": {
+                    "en": "Logo"
+                  }
+                },
+                "kind": "field",
+                "name": "logo",
+                "type": "text",
+                "validations": []
+              }
+            ],
+            "kind": "group",
+            "name": "array_root",
+            "type": "object",
+            "validations": []
+          },
+          "kind": "group",
+          "name": "zarinpal",
+          "type": "array",
+          "validations": []
+        }
+      ],
+      "kind": "group",
+      "name": "gateways",
+      "type": "object",
+      "validations": []
+    },
+    {
+      "attributes": {
+        "placeholder": {
+          "en": "Enter Round Precision Flight completely..."
+        },
+        "title": {
+          "en": "Round Precision Flight"
+        }
+      },
+      "kind": "field",
+      "name": "round_precision_flight",
+      "type": "text",
+      "validations": []
+    },
+    {
+      "attributes": {
+        "placeholder": {
+          "en": "Enter Frontend Title completely..."
+        },
+        "title": {
+          "en": "Frontend Title"
+        }
+      },
+      "kind": "field",
+      "name": "frontend_title",
+      "type": "text",
+      "validations": []
+    },
+    {
+      "attributes": {
+        "placeholder": {
+          "en": "Enter Support Email completely..."
+        },
+        "title": {
+          "en": "Support Email"
         }
       },
       "kind": "field",
       "name": "support_email",
       "type": "text",
-      "validations": [
-        "required",
-        "email"
-      ]
+      "validations": []
     },
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain 7...",
-          "fa": "دامنه ی ایکس ۷"
+          "en": "Enter Support Webhook completely..."
         },
         "title": {
-          "en": "X Domain 7",
-          "fa": "دامنه ی ایکس ۷"
+          "en": "Support Webhook"
         }
       },
       "kind": "field",
       "name": "support_webhook",
       "type": "text",
-      "validations": [
-        "required",
-        "url"
-      ]
+      "validations": []
     },
     {
       "attributes": {
         "placeholder": {
-          "en": "X Domain 8...",
-          "fa": "دامنه ی ایکس ۸"
+          "en": "Enter Nsp completely..."
         },
         "title": {
-          "en": "X Domain 8",
-          "fa": "دامنه ی ایکس ۸"
-        }
-      },
-      "kind": "field",
-      "name": "exceptions_webhook",
-      "type": "text",
-      "validations": [
-        "required",
-        "url"
-      ]
-    },
-    {
-      "attributes": {
-        "text": {
-          "en": "NSP",
-          "fa": "ان اس پی"
+          "en": "Nsp"
         }
       },
       "children_schema": {
         "attributes": {
+          "placeholder": {
+            "en": "Enter Array Root completely..."
+          },
           "title": {
-            "en": "",
-            "fa": ""
+            "en": "Array Root"
           }
         },
         "children": [
           {
             "attributes": {
+              "placeholder": {
+                "en": "Enter Push completely..."
+              },
               "title": {
-                "en": "",
-                "fa": ""
+                "en": "Push"
               }
             },
             "children": [
               {
                 "attributes": {
                   "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
+                    "en": "Enter Push En Issued Notification Title completely..."
                   },
                   "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_en_register_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_fa_register_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_en_reset_password_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_fa_reset_password_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_en_ticket_pending_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_fa_ticket_pending_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_en_issued_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "email_fa_issued_template_id",
-                "type": "text",
-                "validations": [
-                  "required",
-                  "numeric"
-                ]
-              }
-            ],
-            "kind": "group",
-            "name": "email",
-            "type": "object"
-          },
-          {
-            "attributes": {
-              "title": {
-                "en": "",
-                "fa": ""
-              }
-            },
-            "children": [
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "sms_en_register_text",
-                "type": "text",
-                "validations": [
-                  "required"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "sms_fa_register_text",
-                "type": "text",
-                "validations": [
-                  "required"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "sms_en_issued_text",
-                "type": "text",
-                "validations": [
-                  "required"
-                ]
-              },
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
-                  }
-                },
-                "kind": "field",
-                "name": "sms_fa_issued_text",
-                "type": "text",
-                "validations": [
-                  "required"
-                ]
-              }
-            ],
-            "kind": "group",
-            "name": "sms",
-            "type": "object"
-          },
-          {
-            "attributes": {
-              "title": {
-                "en": "",
-                "fa": ""
-              }
-            },
-            "children": [
-              {
-                "attributes": {
-                  "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
-                  },
-                  "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
+                    "en": "Push En Issued Notification Title"
                   }
                 },
                 "kind": "field",
                 "name": "push_en_issued_notification_title",
                 "type": "text",
-                "validations": [
-                  "required"
-                ]
+                "validations": []
               },
               {
                 "attributes": {
                   "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
+                    "en": "Enter Push En Issued Notification Body completely..."
                   },
                   "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
+                    "en": "Push En Issued Notification Body"
                   }
                 },
                 "kind": "field",
                 "name": "push_en_issued_notification_body",
                 "type": "text",
-                "validations": [
-                  "required"
-                ]
+                "validations": []
               },
               {
                 "attributes": {
                   "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
+                    "en": "Enter Push Fa Issued Notification Title completely..."
                   },
                   "title": {
-                    "en": "EmailEn En",
-                    "fa": "EmailEn Fa"
+                    "en": "Push Fa Issued Notification Title"
                   }
                 },
                 "kind": "field",
                 "name": "push_fa_issued_notification_title",
                 "type": "text",
-                "validations": [
-                  "required"
-                ]
+                "validations": []
               },
               {
                 "attributes": {
                   "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
+                    "en": "Enter Push Fa Issued Notification Body completely..."
                   },
                   "title": {
-                    "en": "EmailFaId En",
-                    "fa": "EmailFaId Fa"
+                    "en": "Push Fa Issued Notification Body"
                   }
                 },
                 "kind": "field",
                 "name": "push_fa_issued_notification_body",
                 "type": "text",
-                "validations": [
-                  "required"
-                ]
+                "validations": []
               }
             ],
             "kind": "group",
             "name": "push",
-            "type": "object"
-          }
-        ],
-        "kind": "group",
-        "name": "array_root",
-        "type": "object"
-      },
-      "kind": "group",
-      "name": "nsp",
-      "type": "array",
-      "validations": [
-        "required"
-      ]
-    },
-    {
-      "attributes": {
-        "text": {
-          "en": "Payment Gateways",
-          "fa": "درگاه های پرداخت"
-        }
-      },
-      "children_schema": {
-        "attributes": {
-          "title": {
-            "en": "",
-            "fa": ""
-          }
-        },
-        "children": [
+            "type": "object",
+            "validations": []
+          },
           {
             "attributes": {
               "placeholder": {
-                "en": "X Domain...",
-                "fa": "Damaneye Ix..."
+                "en": "Enter Email completely..."
               },
               "title": {
-                "en": "EmailEn En",
-                "fa": "EmailEn Fa"
+                "en": "Email"
               }
             },
-            "kind": "field",
-            "name": "currency",
-            "options": [
+            "children": [
               {
                 "attributes": {
                   "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
+                    "en": "Enter Email Fa Register Template Id completely..."
                   },
                   "title": {
-                    "en": "Rials",
-                    "fa": "ریال"
+                    "en": "Email Fa Register Template Id"
                   }
                 },
                 "kind": "field",
-                "name": "irr",
-                "type": "option"
+                "name": "email_fa_register_template_id",
+                "type": "text",
+                "validations": []
               },
               {
                 "attributes": {
                   "placeholder": {
-                    "en": "X Domain...",
-                    "fa": "Damaneye Ix..."
+                    "en": "Enter Email En Reset Password Template Id completely..."
                   },
                   "title": {
-                    "en": "Euro",
-                    "fa": "یورو"
+                    "en": "Email En Reset Password Template Id"
                   }
                 },
                 "kind": "field",
-                "name": "eur",
-                "type": "option"
+                "name": "email_en_reset_password_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email En Issued Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email En Issued Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_en_issued_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email En Register Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email En Register Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_en_register_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email Fa Reset Password Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email Fa Reset Password Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_fa_reset_password_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email En Ticket Pending Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email En Ticket Pending Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_en_ticket_pending_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email Fa Ticket Pending Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email Fa Ticket Pending Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_fa_ticket_pending_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email Fa Issued Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email Fa Issued Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_fa_issued_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email Fa Promotion Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email Fa Promotion Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_fa_promotion_template_id",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Email En Promotion Template Id completely..."
+                  },
+                  "title": {
+                    "en": "Email En Promotion Template Id"
+                  }
+                },
+                "kind": "field",
+                "name": "email_en_promotion_template_id",
+                "type": "text",
+                "validations": []
               }
             ],
-            "type": "select",
-            "validations": [
-              "required",
-              "alphanum",
-              "in(irr|eur)"
-            ]
+            "kind": "group",
+            "name": "email",
+            "type": "object",
+            "validations": []
           },
           {
             "attributes": {
               "placeholder": {
-                "en": "X Domain...",
-                "fa": "Damaneye Ix..."
+                "en": "Enter Sms completely..."
               },
               "title": {
-                "en": "EmailFaId En",
-                "fa": "EmailFaId Fa"
+                "en": "Sms"
               }
             },
-            "kind": "field",
-            "name": "gateway",
-            "type": "text",
-            "validations": [
-              "required",
-              "alphanum"
-            ]
-          },
-          {
-            "kind": "field",
-            "name": "gateway_uuid",
-            "type": "uuid"
-          },
-          {
-            "attributes": {
-              "placeholder": {
-                "en": "X Domain...",
-                "fa": "Damaneye Ix..."
+            "children": [
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Sms En Register Text completely..."
+                  },
+                  "title": {
+                    "en": "Sms En Register Text"
+                  }
+                },
+                "kind": "field",
+                "name": "sms_en_register_text",
+                "type": "text",
+                "validations": []
               },
-              "title": {
-                "en": "EmailEn En",
-                "fa": "EmailEn Fa"
-              }
-            },
-            "kind": "field",
-            "name": "merchant_id",
-            "type": "text",
-            "validations": [
-              "required",
-              "alphanum"
-            ]
-          },
-          {
-            "attributes": {
-              "placeholder": {
-                "en": "X Domain...",
-                "fa": "Damaneye Ix..."
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Sms Fa Register Text completely..."
+                  },
+                  "title": {
+                    "en": "Sms Fa Register Text"
+                  }
+                },
+                "kind": "field",
+                "name": "sms_fa_register_text",
+                "type": "text",
+                "validations": []
               },
-              "title": {
-                "en": "EmailFaId En",
-                "fa": "EmailFaId Fa"
-              }
-            },
-            "kind": "field",
-            "name": "username",
-            "type": "text",
-            "validations": [
-              "alphanum"
-            ]
-          },
-          {
-            "attributes": {
-              "placeholder": {
-                "en": "X Domain...",
-                "fa": "Damaneye Ix..."
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Sms En Issued Text completely..."
+                  },
+                  "title": {
+                    "en": "Sms En Issued Text"
+                  }
+                },
+                "kind": "field",
+                "name": "sms_en_issued_text",
+                "type": "text",
+                "validations": []
               },
-              "title": {
-                "en": "EmailFaId En",
-                "fa": "EmailFaId Fa"
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Sms Fa Issued Text completely..."
+                  },
+                  "title": {
+                    "en": "Sms Fa Issued Text"
+                  }
+                },
+                "kind": "field",
+                "name": "sms_fa_issued_text",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Sms En Promotion Text completely..."
+                  },
+                  "title": {
+                    "en": "Sms En Promotion Text"
+                  }
+                },
+                "kind": "field",
+                "name": "sms_en_promotion_text",
+                "type": "text",
+                "validations": []
+              },
+              {
+                "attributes": {
+                  "placeholder": {
+                    "en": "Enter Sms Fa Promotion Text completely..."
+                  },
+                  "title": {
+                    "en": "Sms Fa Promotion Text"
+                  }
+                },
+                "kind": "field",
+                "name": "sms_fa_promotion_text",
+                "type": "text",
+                "validations": []
               }
-            },
-            "kind": "field",
-            "name": "password",
-            "type": "text",
-            "validations": [
-              "alphanum"
-            ]
+            ],
+            "kind": "group",
+            "name": "sms",
+            "type": "object",
+            "validations": []
           }
         ],
         "kind": "group",
         "name": "array_root",
         "type": "object",
-        "validations": [
-          ""
-        ]
+        "validations": []
       },
       "kind": "group",
-      "name": "payment_gateways",
+      "name": "nsp",
       "type": "array",
-      "validations": [
-        "required"
-      ]
+      "validations": []
+    },
+    {
+      "attributes": {
+        "placeholder": {
+          "en": "Enter Round Precision Hotel completely..."
+        },
+        "title": {
+          "en": "Round Precision Hotel"
+        }
+      },
+      "kind": "field",
+      "name": "round_precision_hotel",
+      "type": "text",
+      "validations": []
     }
   ],
   "kind": "group",
   "name": "root",
-  "type": "object"
+  "type": "object",
+  "validations": []
 }

@@ -4,14 +4,52 @@
   "exceptions_webhook": "https://chat.hamitrip.com/hooks/nj6EtoZbe9C3xQpW3/wGtLWZ5WNZhv2GSvKp7o2XL5CuFeSwhCisbkF6qauYZd7PwQ",
   "frontend_base_url": "https://hipotrip.ir/",
   "frontend_title": "HipoTrip",
+  "gateways": {
+    "mellat": [],
+    "parsian": [],
+    "payir": [
+      {
+        "account": "fds",
+        "gateway": "fdsdf",
+        "logo": "fdsffdsf",
+        "merchant_id": "fsdffd",
+        "uuid": "6fad8a0d-b889-4f2f-b9b3-3d80a4149651"
+      },
+      {
+        "account": "sd",
+        "gateway": "fsdfsd",
+        "logo": "dfsddf",
+        "merchant_id": "fdsfd",
+        "uuid": "a393590e-c690-490b-9f3b-f711aacc8cb6"
+      },
+      {
+        "account": "fsdf",
+        "gateway": "fsdf",
+        "logo": "sdfdsf",
+        "merchant_id": "sfd",
+        "uuid": "195a929a-d25e-45b8-bf76-981af7b1f22d"
+      },
+      {
+        "account": "dfdfsdf",
+        "gateway": "fsdfds",
+        "logo": "dffsfs",
+        "merchant_id": "fsfsfsdf",
+        "uuid": "96827f50-11d7-4406-b200-2cd7e7a5f401"
+      }
+    ],
+    "saman": [],
+    "zarinpal": []
+  },
   "nsp": [
     {
       "email": {
         "email_en_issued_template_id": "2200981",
+        "email_en_promotion_template_id": "",
         "email_en_register_template_id": "2192987",
         "email_en_reset_password_template_id": "2192381",
         "email_en_ticket_pending_template_id": "2201741",
         "email_fa_issued_template_id": "2224822",
+        "email_fa_promotion_template_id": "",
         "email_fa_register_template_id": "2158762",
         "email_fa_reset_password_template_id": "2224482",
         "email_fa_ticket_pending_template_id": "2224823"
@@ -24,17 +62,19 @@
       },
       "sms": {
         "sms_en_issued_text": "Thanks for purchasing\n For more information please check your dashboard: %s \n %s",
+        "sms_en_promotion_text": "",
         "sms_en_register_text": "Hi \n Welcome to HopoTrip world.\n Your password is: %s \n Happytrip.ir",
         "sms_fa_issued_text": "با تشکر از خرید شما\n برای دریافت اطلاعات بیشتر به پنل کاربری خود مراجعه نمایید: %s \n %s",
+        "sms_fa_promotion_text": "",
         "sms_fa_register_text": "سلام \n به دنیای HipoTrip خوش آمدید.\n کلمه عبور شما : %s \n  HipoTrip.ir"
       }
     }
   ],
   "payment_gateways": [
     {
-      "gateway_uuid": "",
       "currency": "irr",
       "gateway": "parsian",
+      "gateway_uuid": "e55ccbfa-422c-4645-a0a5-d3044cca5cb3",
       "merchant_id": "VJIo5iURFJfk0l3J3Rs2",
       "password": "",
       "username": ""
@@ -42,11 +82,15 @@
     {
       "currency": "eur",
       "gateway": "asd",
+      "gateway_uuid": "58d4b4a3-3ffa-49c7-ad1a-255d95e44dda",
       "merchant_id": "VJIo5iURFJfk0l3J3Rs2",
-      "password": "",
-      "username": ""
+      "password": "5555",
+      "username": "11116666"
     }
   ],
+  "round_precision_flight": "",
+  "round_precision_hotel": "",
+  "round_precision_insurance": "",
   "support_email": "info@360trip.ir",
   "support_webhook": "https://chat.hamitrip.com/hooks/F6R4gwdEWQ28muDXp/dLMPntNp4qjb5ar2cF6WL3dXRGL44wehw974GaYHRPrRrZQv",
   "x_domain": "hamitrip:hipotrip"

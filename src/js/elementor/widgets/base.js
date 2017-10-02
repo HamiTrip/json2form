@@ -19,19 +19,19 @@ export default class Base {
         locale = this.options.locale;
 
         if (typeof this.attributes.title === 'object') {
-            this.attributes.title = locale in this.attributes.title ? this.attributes.title[locale] : this.attributes.title;
+            this.attributes.title = locale in this.attributes.title ? this.attributes.title[locale] : this.attributes.title.en;
         }
 
         if (this.attributes.text) {
             if (typeof this.attributes.text === 'object') {
-                this.attributes.text = locale in this.attributes.text ? this.attributes.text[locale] : this.attributes.text;
+                this.attributes.text = locale in this.attributes.text ? this.attributes.text[locale] : this.attributes.text.en;
             }
         } else {
             this.attributes.text = this.attributes.title;
         }
 
         if (typeof this.attributes.placeholder === 'object') {
-            this.attributes.placeholder = locale in this.attributes.placeholder ? this.attributes.placeholder[locale] : this.attributes.placeholder;
+            this.attributes.placeholder = locale in this.attributes.placeholder ? this.attributes.placeholder[locale] : this.attributes.placeholder.en;
         }
     }
 
